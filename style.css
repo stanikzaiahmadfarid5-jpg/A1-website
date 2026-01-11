@@ -1,19 +1,50 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    text-align: center;
-    padding-top: 50px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  min-height: 100vh;
 }
 
 .container {
-    background: white;
-    width: 300px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
+  max-width: 420px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#word {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: #222;
+}
+
+#meaning {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 20px;
 }
 
 button {
-    padding: 10px 20px;
-    cursor: pointer;
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  background: #4facfe;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3498db;
 }
