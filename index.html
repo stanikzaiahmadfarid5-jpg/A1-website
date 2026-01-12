@@ -3,25 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1 Deutsch</title>
+    <title>A1 Deutsch Lernen</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f4f4f4;
+            background: #f2f2f2;
         }
+
         header {
-            background: #1e90ff;
+            background: #4CAF50;
             color: white;
             padding: 20px;
             text-align: center;
         }
+
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
         main {
-            padding: 20px;
+            padding: 15px;
             max-width: 900px;
             margin: auto;
         }
+
         .card {
             background: white;
             padding: 15px;
@@ -29,29 +49,64 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #ddd;
+            font-size: 14px;
+        }
     </style>
 </head>
 
 <body>
 
 <header>
-    <h1>A1 Deutsch</h1>
-    <p>Deutsch lernen leicht gemacht</p>
+    <h1>A1 Deutsch Lernen</h1>
+    <p>Einfache Wörter für Anfänger</p>
 </header>
 
+<nav>
+    <a href="#haus">Haus</a>
+    <a href="#supermarkt">Supermarkt</a>
+    <a href="#schule">Schule</a>
+</nav>
+
 <main>
-    <div class="card">
-        <h2>Haus Wörter</h2>
-        <p>Tisch – der Tisch</p>
-        <p>Stuhl – der Stuhl</p>
+
+    <div class="card" id="haus">
+        <h2>🏠 Haus – Wörter</h2>
+        <p>der Tisch – میز</p>
+        <p>der Stuhl – چوکی</p>
+        <p>das Bett – بستر</p>
+        <p>die Tür – دروازه</p>
     </div>
 
-    <div class="card">
-        <h2>Supermarkt</h2>
-        <p>Brot – das Brot</p>
-        <p>Milch – die Milch</p>
+    <div class="card" id="supermarkt">
+        <h2>🛒 Supermarkt – Wörter</h2>
+        <p>das Brot – نان</p>
+        <p>die Milch – شیر</p>
+        <p>der Apfel – سیب</p>
+        <p>das Wasser – آب</p>
     </div>
+
+    <div class="card" id="schule">
+        <h2>🏫 Schule – Wörter</h2>
+        <p>das Buch – کتاب</p>
+        <p>der Stift – قلم</p>
+        <p>die Schule – مکتب</p>
+        <p>der Lehrer – استاد</p>
+    </div>
+
 </main>
+
+<footer>
+    © 2026 A1 Deutsch Lernen
+</footer>
 
 </body>
 </html>
