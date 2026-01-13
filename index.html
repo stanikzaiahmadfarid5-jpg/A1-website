@@ -27,7 +27,7 @@
       font-weight: bold;
     }
 
-    /* Hamburger */
+    /* Hamburger button */
     .menu-btn {
       font-size: 26px;
       cursor: pointer;
@@ -52,7 +52,7 @@
       background: #174a99;
     }
 
-    /* Mobile */
+    /* Mobile view */
     @media (max-width: 768px) {
       nav {
         display: none;
@@ -73,8 +73,19 @@
       padding: 20px;
     }
 
-    h1 {
+    h1, h2 {
       color: #2c7be5;
+    }
+
+    ul {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -87,6 +98,7 @@
 
 <nav id="menu">
   <a href="#">Start</a>
+  <a href="#">Wörter</a>
   <a href="#">Grammatik</a>
   <a href="#">Texte</a>
   <a href="#">Über uns</a>
@@ -95,6 +107,15 @@
 <div class="content">
   <h1>Willkommen!</h1>
   <p>Einfach Deutsch lernen – Schritt für Schritt.</p>
+
+  <h2>Wörter – Begrüßung</h2>
+  <ul>
+    <li><b>Guten Morgen</b> – صبح بخیر</li>
+    <li><b>Guten Tag</b> – روز بخیر</li>
+    <li><b>Guten Abend</b> – عصر بخیر</li>
+    <li><b>Hallo</b> – سلام</li>
+    <li><b>Tschüss</b> – خداحافظ</li>
+  </ul>
 </div>
 
 <script>
