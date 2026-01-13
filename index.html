@@ -1,125 +1,107 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A1 Deutsch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch A1 Einfach</title>
 
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f5f5f5;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
 
-header{
-    background:#2e7d32;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
+    /* Header */
+    header {
+      background: #2c7be5;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-nav{
-    background:#333;
-    padding:10px;
-    text-align:center;
-}
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-nav a{
-    color:white;
-    margin:10px;
-    text-decoration:none;
-    font-weight:bold;
-}
+    /* Hamburger */
+    .menu-btn {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
 
-nav a:hover{
-    color:#4CAF50;
-}
+    /* Menu */
+    nav {
+      background: #1f5fbf;
+      display: flex;
+      justify-content: center;
+    }
 
-main{
-    max-width:900px;
-    margin:auto;
-    padding:15px;
-}
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      display: block;
+    }
 
-.section{
-    background:white;
-    margin-bottom:20px;
-    padding:15px;
-    border-radius:10px;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
+    nav a:hover {
+      background: #174a99;
+    }
 
-.section h2{
-    color:#2e7d32;
-}
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+      }
 
-.word{
-    padding:5px 0;
-    border-bottom:1px solid #eee;
-}
+      nav.show {
+        display: flex;
+      }
 
-footer{
-    text-align:center;
-    padding:15px;
-    background:#ddd;
-}
-</style>
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    /* Content */
+    .content {
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2c7be5;
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-<h1>A1 Deutsch Lernen</h1>
-<p>Deutsch Wörter für Anfänger</p>
+  <div class="logo">Deutsch A1 Einfach</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav>
-<a href="#haus">Haus</a>
-<a href="#supermarkt">Supermarkt</a>
-<a href="#schule">Schule</a>
-<a href="#alltag">Alltag</a>
+<nav id="menu">
+  <a href="#">Start</a>
+  <a href="#">Grammatik</a>
+  <a href="#">Texte</a>
+  <a href="#">Über uns</a>
 </nav>
 
-<main>
-
-<div class="section" id="haus">
-<h2>🏠 Haus</h2>
-<div class="word">der Tisch – میز</div>
-<div class="word">der Stuhl – چوکی</div>
-<div class="word">das Bett – بستر</div>
-<div class="word">die Tür – دروازه</div>
+<div class="content">
+  <h1>Willkommen!</h1>
+  <p>Einfach Deutsch lernen – Schritt für Schritt.</p>
 </div>
 
-<div class="section" id="supermarkt">
-<h2>🛒 Supermarkt</h2>
-<div class="word">das Brot – نان</div>
-<div class="word">die Milch – شیر</div>
-<div class="word">der Apfel – سیب</div>
-<div class="word">das Wasser – آب</div>
-</div>
-
-<div class="section" id="schule">
-<h2>🏫 Schule</h2>
-<div class="word">das Buch – کتاب</div>
-<div class="word">der Stift – قلم</div>
-<div class="word">der Lehrer – استاد</div>
-<div class="word">die Schule – مکتب</div>
-</div>
-
-<div class="section" id="alltag">
-<h2>📅 Alltag</h2>
-<div class="word">Guten Morgen – صبح بخیر</div>
-<div class="word">Guten Abend – شام بخیر</div>
-<div class="word">Danke – تشکر</div>
-<div class="word">Bitte – لطفاً</div>
-</div>
-
-</main>
-
-<footer>
-© 2026 A1 Deutsch
-</footer>
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
 
 </body>
 </html>
