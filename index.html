@@ -1,24 +1,28 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deutsch A1 Einfach</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+  font-family: 'Poppins', sans-serif;
+  background: #f2f5f9;
+  color: #333;
 }
 
 /* Header */
 header {
-  background: #1e90ff;
+  background: linear-gradient(135deg, #1e90ff, #4facfe);
   color: white;
-  padding: 15px;
+  padding: 25px;
   text-align: center;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 /* Menu button */
@@ -26,7 +30,7 @@ header {
   font-size: 26px;
   cursor: pointer;
   padding: 15px;
-  background: #333;
+  background: #1e90ff;
   color: white;
 }
 
@@ -37,22 +41,23 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background: #222;
+  background: #1f2933;
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
+  z-index: 1000;
 }
 
 .side-menu a {
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-decoration: none;
-  color: white;
+  color: #f1f1f1;
   display: block;
   font-size: 18px;
 }
 
 .side-menu a:hover {
-  background: #444;
+  background: #374151;
 }
 
 .close-btn {
@@ -61,6 +66,7 @@ header {
   right: 20px;
   font-size: 30px;
   cursor: pointer;
+  color: white;
 }
 
 /* Content */
@@ -70,13 +76,19 @@ header {
 
 .box {
   background: white;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 h2 {
   color: #1e90ff;
+  margin-top: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
 }
 </style>
 </head>
@@ -135,8 +147,8 @@ Deutsch A1 – Einfach Lernen
 <div class="box" id="about">
 <h2>Über uns</h2>
 <p>
-Willkommen auf unserer Deutsch-Lernwebsite!  
-Wir glauben: Jeder kann Deutsch lernen – Schritt für Schritt.  
+Willkommen auf unserer Deutsch-Lernwebsite!<br>
+Wir glauben: Jeder kann Deutsch lernen – Schritt für Schritt.<br>
 Lerne täglich neue Wörter und verbessere dein Deutsch mit Spaß.
 </p>
 </div>
@@ -145,7 +157,7 @@ Lerne täglich neue Wörter und verbessere dein Deutsch mit Spaß.
 
 <script>
 function openMenu() {
-  document.getElementById("menu").style.width = "250px";
+  document.getElementById("menu").style.width = "260px";
 }
 
 function closeMenu() {
