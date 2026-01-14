@@ -7,122 +7,102 @@
 
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      margin: 0;
+      background: #f4f6f8;
     }
 
-    /* Header */
     header {
-      background: #2c7be5;
+      background: #1e90ff;
       color: white;
       padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      font-size: 22px;
     }
 
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
+    .menu {
+      background: #333;
+      padding: 10px;
+      text-align: center;
     }
 
-    /* Hamburger button */
-    .menu-btn {
-      font-size: 26px;
-      cursor: pointer;
-      display: none;
-    }
-
-    /* Menu */
-    nav {
-      background: #1f5fbf;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav a {
+    .menu a {
       color: white;
-      padding: 15px;
+      margin: 0 10px;
       text-decoration: none;
-      display: block;
+      font-size: 16px;
     }
 
-    nav a:hover {
-      background: #174a99;
-    }
-
-    /* Mobile view */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-      }
-
-      nav.show {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-    }
-
-    /* Content */
-    .content {
+    .container {
       padding: 20px;
     }
 
-    h1, h2 {
-      color: #2c7be5;
+    h2 {
+      color: #1e90ff;
+    }
+
+    .box {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
 
     ul {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    li {
-      margin-bottom: 8px;
-      font-size: 16px;
+      padding-left: 20px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">Deutsch A1 Einfach</div>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  Deutsch A1 – Einfach Lernen
 </header>
 
-<nav id="menu">
-  <a href="#">Start</a>
-  <a href="#">Wörter</a>
-  <a href="#">Grammatik</a>
-  <a href="#">Texte</a>
-  <a href="#">Über uns</a>
-</nav>
-
-<div class="content">
-  <h1>Willkommen!</h1>
-  <p>Einfach Deutsch lernen – Schritt für Schritt.</p>
-
-  <h2>Wörter – Begrüßung</h2>
-  <ul>
-    <li><b>Guten Morgen</b> – صبح بخیر</li>
-    <li><b>Guten Tag</b> – روز بخیر</li>
-    <li><b>Guten Abend</b> – عصر بخیر</li>
-    <li><b>Hallo</b> – سلام</li>
-    <li><b>Tschüss</b> – خداحافظ</li>
-  </ul>
+<div class="menu">
+  <a href="#begrussung">Begrüßung</a>
+  <a href="#familie">Familie</a>
+  <a href="#alltag">Alltag</a>
 </div>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-  }
-</script>
+<div class="container">
+
+  <div class="box" id="begrussung">
+    <h2>Begrüßung (احوال‌پرسی)</h2>
+    <ul>
+      <li>Hallo – سلام</li>
+      <li>Guten Morgen – صبح بخیر</li>
+      <li>Guten Tag – روز بخیر</li>
+      <li>Guten Abend – شام بخیر</li>
+      <li>Auf Wiedersehen – خداحافظ</li>
+    </ul>
+  </div>
+
+  <div class="box" id="familie">
+    <h2>Familie (خانواده)</h2>
+    <ul>
+      <li>Vater – پدر</li>
+      <li>Mutter – مادر</li>
+      <li>Bruder – برادر</li>
+      <li>Schwester – خواهر</li>
+      <li>Familie – خانواده</li>
+    </ul>
+  </div>
+
+  <div class="box" id="alltag">
+    <h2>Alltag (زندگی روزمره)</h2>
+    <ul>
+      <li>Haus – خانه</li>
+      <li>Schule – مکتب</li>
+      <li>Arbeit – کار</li>
+      <li>Essen – غذا</li>
+      <li>Trinken – نوشیدن</li>
+    </ul>
+  </div>
+
+</div>
 
 </body>
 </html>
