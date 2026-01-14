@@ -1,108 +1,157 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deutsch A1 Einfach</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A1 Einfach</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6f8;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
 
-    header {
-      background: #1e90ff;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 22px;
-    }
+/* Header */
+header {
+  background: #1e90ff;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 22px;
+}
 
-    .menu {
-      background: #333;
-      padding: 10px;
-      text-align: center;
-    }
+/* Menu button */
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  padding: 15px;
+  background: #333;
+  color: white;
+}
 
-    .menu a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 16px;
-    }
+/* Side menu */
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #222;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
 
-    .container {
-      padding: 20px;
-    }
+.side-menu a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  font-size: 18px;
+}
 
-    h2 {
-      color: #1e90ff;
-    }
+.side-menu a:hover {
+  background: #444;
+}
 
-    .box {
-      background: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
 
-    ul {
-      padding-left: 20px;
-    }
-  </style>
+/* Content */
+.container {
+  padding: 20px;
+}
+
+.box {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #1e90ff;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  Deutsch A1 – Einfach Lernen
-</header>
+<div class="menu-btn" onclick="openMenu()">☰ Menü</div>
 
-<div class="menu">
-  <a href="#begrussung">Begrüßung</a>
-  <a href="#familie">Familie</a>
-  <a href="#alltag">Alltag</a>
+<div id="menu" class="side-menu">
+  <span class="close-btn" onclick="closeMenu()">×</span>
+  <a href="#begrussung" onclick="closeMenu()">Begrüßung</a>
+  <a href="#familie" onclick="closeMenu()">Familie</a>
+  <a href="#alltag" onclick="closeMenu()">Alltag</a>
+  <a href="#about" onclick="closeMenu()">Über uns</a>
 </div>
+
+<header>
+Deutsch A1 – Einfach Lernen
+</header>
 
 <div class="container">
 
-  <div class="box" id="begrussung">
-    <h2>Begrüßung (احوال‌پرسی)</h2>
-    <ul>
-      <li>Hallo – سلام</li>
-      <li>Guten Morgen – صبح بخیر</li>
-      <li>Guten Tag – روز بخیر</li>
-      <li>Guten Abend – شام بخیر</li>
-      <li>Auf Wiedersehen – خداحافظ</li>
-    </ul>
-  </div>
+<div class="box" id="begrussung">
+<h2>Begrüßung</h2>
+<ul>
+<li>Hallo – سلام</li>
+<li>Guten Morgen – صبح بخیر</li>
+<li>Guten Tag – روز بخیر</li>
+<li>Guten Abend – شام بخیر</li>
+<li>Auf Wiedersehen – خداحافظ</li>
+</ul>
+</div>
 
-  <div class="box" id="familie">
-    <h2>Familie (خانواده)</h2>
-    <ul>
-      <li>Vater – پدر</li>
-      <li>Mutter – مادر</li>
-      <li>Bruder – برادر</li>
-      <li>Schwester – خواهر</li>
-      <li>Familie – خانواده</li>
-    </ul>
-  </div>
+<div class="box" id="familie">
+<h2>Familie</h2>
+<ul>
+<li>Vater – پدر</li>
+<li>Mutter – مادر</li>
+<li>Bruder – برادر</li>
+<li>Schwester – خواهر</li>
+<li>Familie – خانواده</li>
+</ul>
+</div>
 
-  <div class="box" id="alltag">
-    <h2>Alltag (زندگی روزمره)</h2>
-    <ul>
-      <li>Haus – خانه</li>
-      <li>Schule – مکتب</li>
-      <li>Arbeit – کار</li>
-      <li>Essen – غذا</li>
-      <li>Trinken – نوشیدن</li>
-    </ul>
-  </div>
+<div class="box" id="alltag">
+<h2>Alltag</h2>
+<ul>
+<li>Haus – خانه</li>
+<li>Schule – مکتب</li>
+<li>Arbeit – کار</li>
+<li>Essen – غذا</li>
+<li>Trinken – نوشیدن</li>
+</ul>
+</div>
+
+<div class="box" id="about">
+<h2>Über uns</h2>
+<p>
+Willkommen auf unserer Deutsch-Lernwebsite!  
+Wir glauben: Jeder kann Deutsch lernen – Schritt für Schritt.  
+Lerne täglich neue Wörter und verbessere dein Deutsch mit Spaß.
+</p>
+</div>
 
 </div>
+
+<script>
+function openMenu() {
+  document.getElementById("menu").style.width = "250px";
+}
+
+function closeMenu() {
+  document.getElementById("menu").style.width = "0";
+}
+</script>
 
 </body>
 </html>
