@@ -1,169 +1,90 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deutsch A1 Einfach</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch A1 Einfach</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f2f5f9;
-  color: #333;
-}
+    header {
+      background: #1e90ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 22px;
+    }
 
-/* Header */
-header {
-  background: linear-gradient(135deg, #1e90ff, #4facfe);
-  color: white;
-  padding: 25px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-}
+    .container {
+      padding: 20px;
+    }
 
-/* Menu button */
-.menu-btn {
-  font-size: 26px;
-  cursor: pointer;
-  padding: 15px;
-  background: #1e90ff;
-  color: white;
-}
+    .category {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      display: block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-/* Side menu */
-.side-menu {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #1f2933;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
-  z-index: 1000;
-}
+    .category:hover {
+      background: #eaf3ff;
+    }
 
-.side-menu a {
-  padding: 12px 20px;
-  text-decoration: none;
-  color: #f1f1f1;
-  display: block;
-  font-size: 18px;
-}
+    .category h2 {
+      margin: 0;
+      color: #1e90ff;
+    }
 
-.side-menu a:hover {
-  background: #374151;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
-}
-
-/* Content */
-.container {
-  padding: 20px;
-}
-
-.box {
-  background: white;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-h2 {
-  color: #1e90ff;
-  margin-top: 0;
-}
-
-ul li {
-  margin-bottom: 8px;
-}
-</style>
+    .category p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="menu-btn" onclick="openMenu()">☰ Menü</div>
-
-<div id="menu" class="side-menu">
-  <span class="close-btn" onclick="closeMenu()">×</span>
-  <a href="#begrussung" onclick="closeMenu()">Begrüßung</a>
-  <a href="#familie" onclick="closeMenu()">Familie</a>
-  <a href="#alltag" onclick="closeMenu()">Alltag</a>
-  <a href="#about" onclick="closeMenu()">Über uns</a>
-</div>
-
 <header>
-Deutsch A1 – Einfach Lernen
+  Deutsch A1 – Einfach Lernen
 </header>
 
 <div class="container">
 
-<div class="box" id="begrussung">
-<h2>Begrüßung</h2>
-<ul>
-<li>Hallo – سلام</li>
-<li>Guten Morgen – صبح بخیر</li>
-<li>Guten Tag – روز بخیر</li>
-<li>Guten Abend – شام بخیر</li>
-<li>Auf Wiedersehen – خداحافظ</li>
-</ul>
-</div>
+  <a href="begrussung.html" class="category">
+    <h2>Begrüßung</h2>
+    <p>احوال‌پرسی و سلام‌ها</p>
+  </a>
 
-<div class="box" id="familie">
-<h2>Familie</h2>
-<ul>
-<li>Vater – پدر</li>
-<li>Mutter – مادر</li>
-<li>Bruder – برادر</li>
-<li>Schwester – خواهر</li>
-<li>Familie – خانواده</li>
-</ul>
-</div>
+  <a href="familie.html" class="category">
+    <h2>Familie</h2>
+    <p>لغات مربوط خانواده</p>
+  </a>
 
-<div class="box" id="alltag">
-<h2>Alltag</h2>
-<ul>
-<li>Haus – خانه</li>
-<li>Schule – مکتب</li>
-<li>Arbeit – کار</li>
-<li>Essen – غذا</li>
-<li>Trinken – نوشیدن</li>
-</ul>
-</div>
+  <a href="alltag.html" class="category">
+    <h2>Alltag</h2>
+    <p>لغات زندگی روزمره</p>
+  </a>
 
-<div class="box" id="about">
-<h2>Über uns</h2>
-<p>
-Willkommen auf unserer Deutsch-Lernwebsite!<br>
-Wir glauben: Jeder kann Deutsch lernen – Schritt für Schritt.<br>
-Lerne täglich neue Wörter und verbessere dein Deutsch mit Spaß.
-</p>
-</div>
+  <a href="essen.html" class="category">
+    <h2>Essen & Trinken</h2>
+    <p>غذا و نوشیدنی</p>
+  </a>
+
+  <a href="schule.html" class="category">
+    <h2>Schule</h2>
+    <p>لغات مکتب</p>
+  </a>
 
 </div>
-
-<script>
-function openMenu() {
-  document.getElementById("menu").style.width = "260px";
-}
-
-function closeMenu() {
-  document.getElementById("menu").style.width = "0";
-}
-</script>
 
 </body>
 </html>
