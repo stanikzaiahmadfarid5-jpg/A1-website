@@ -2,21 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Grammatik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammatik – Deutsch A1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header><h1>Grammatik</h1></header>
+<header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+  <h1>Grammatik</h1>
+</header>
 
-<main>
-  <div class="content-box">
-    <p>Ich bin Ahmad. – من احمد هستم</p>
-    <p>Ich lerne Deutsch. – من آلمانی یاد می‌گیرم</p>
-    <a class="back" href="index.html">← بازگشت</a>
-  </div>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="begrussung.html">👋 Begrüßung</a>
+  <a href="familie.html">👨‍👩‍👧 Familie</a>
+  <a href="supermarkt.html">🛒 Supermarkt</a>
+  <a href="alltag.html">📅 Alltag</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="texte.html">📖 Kurze Texte</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
+
+<main class="container">
+  <div class="card">ich bin – من هستم</div>
+  <div class="card">du bist – تو هستی</div>
+  <div class="card">er / sie ist – او هست</div>
+  <div class="card">wir sind – ما هستیم</div>
+  <div class="card">sein = بودن</div>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
