@@ -1,74 +1,96 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
 body {
-  margin: 0;
-  background: #f4f6f8;
+  background: #f2f4f8;
+  color: #1f2937;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
-  background: #1f3c88;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
   color: white;
-  padding: 15px;
+  padding: 16px;
   display: flex;
   align-items: center;
+  gap: 12px;
 }
 
 header h1 {
   font-size: 20px;
-  margin: 0 auto;
 }
 
+/* ===== MENU BUTTON ===== */
 .menu-btn {
-  font-size: 26px;
+  font-size: 24px;
   cursor: pointer;
 }
 
-/* Side Menu */
+/* ===== SIDE MENU ===== */
 .side-menu {
   position: fixed;
   top: 0;
   left: -260px;
   width: 260px;
   height: 100%;
-  background: #243b6b;
+  background: #111827;
   padding-top: 60px;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  z-index: 1000;
 }
 
 .side-menu a {
   display: block;
-  color: white;
   padding: 14px 20px;
+  color: #e5e7eb;
   text-decoration: none;
   font-size: 16px;
+  border-bottom: 1px solid #1f2937;
 }
 
 .side-menu a:hover {
-  background: #1f3c88;
+  background: #2563eb;
+  color: white;
 }
 
-/* Cards */
+/* ===== MAIN CONTAINER ===== */
 .container {
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
+/* ===== CARDS ===== */
 .card {
-  display: block;
   background: white;
-  margin-bottom: 15px;
-  padding: 22px;
-  text-align: center;
-  font-size: 22px;
-  color: #1f3c88;
-  text-decoration: none;
   border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 22px;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  background: #eef2ff;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* ===== LINKS AS CARDS (index page) ===== */
+.card a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
