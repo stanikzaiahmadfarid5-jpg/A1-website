@@ -2,25 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Supermarkt</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermarkt – Deutsch A1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header><h1>Supermarkt</h1></header>
+<header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+  <h1>Supermarkt</h1>
+</header>
 
-<main>
-  <div class="content-box">
-    <ul>
-      <li>Brot – نان</li>
-      <li>Milch – شیر</li>
-      <li>Wasser – آب</li>
-      <li>Reis – برنج</li>
-    </ul>
-    <a class="back" href="index.html">← بازگشت</a>
-  </div>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="begrussung.html">👋 Begrüßung</a>
+  <a href="familie.html">👨‍👩‍👧 Familie</a>
+  <a href="alltag.html">📅 Alltag</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="grammatik.html">📘 Grammatik</a>
+  <a href="texte.html">📖 Kurze Texte</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
+
+<main class="container">
+  <div class="card">das Brot – نان</div>
+  <div class="card">die Milch – شیر</div>
+  <div class="card">das Wasser – آب</div>
+  <div class="card">der Preis – قیمت</div>
+  <div class="card">bezahlen – پرداخت کردن</div>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
