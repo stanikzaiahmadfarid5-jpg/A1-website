@@ -1,4 +1,7 @@
-function toggleMenu() {
-  const nav = document.getElementById("nav");
-  nav.style.display = nav.style.display === "block" ? "none" : "block";
+function openMenu() {
+  document.getElementById("menu").style.left = "0";
+}
+
+function closeMenu() {
+  document.getElementById("menu").style.left = "-260px";
 }
