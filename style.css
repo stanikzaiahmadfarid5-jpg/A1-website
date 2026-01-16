@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f2f4f8;
+  background: #f1f5f9;
   color: #1f2937;
 }
 
@@ -26,7 +26,7 @@ header h1 {
 
 /* ===== MENU BUTTON ===== */
 .menu-btn {
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
 }
 
@@ -37,7 +37,7 @@ header h1 {
   left: -260px;
   width: 260px;
   height: 100%;
-  background: #111827;
+  background: #0f172a;
   padding-top: 60px;
   transition: 0.3s ease;
   z-index: 1000;
@@ -49,7 +49,7 @@ header h1 {
   color: #e5e7eb;
   text-decoration: none;
   font-size: 16px;
-  border-bottom: 1px solid #1f2937;
+  border-bottom: 1px solid #1e293b;
 }
 
 .side-menu a:hover {
@@ -57,23 +57,25 @@ header h1 {
   color: white;
 }
 
-/* ===== MAIN CONTAINER ===== */
+/* ===== MAIN ===== */
 .container {
-  padding: 20px;
+  padding: 22px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 18px;
 }
 
-/* ===== CARDS ===== */
+/* ===== CARD ===== */
 .card {
   background: white;
-  border-radius: 14px;
-  padding: 22px;
+  border-radius: 16px;
+  padding: 24px;
   font-size: 18px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s ease;
 }
 
 .card:hover {
@@ -81,7 +83,7 @@ header h1 {
   box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-/* ===== LINKS AS CARDS (index page) ===== */
+/* ===== LINKS ===== */
 .card a {
   text-decoration: none;
   color: #1e3a8a;
