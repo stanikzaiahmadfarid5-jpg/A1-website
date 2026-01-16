@@ -1,4 +1,4 @@
-document.getElementById("nextBtn").onclick = function () {
-    document.getElementById("word").innerText = "World";
-    document.getElementById("meaning").innerText = "دنیا";
-};
+function toggleMenu() {
+  const nav = document.getElementById("nav");
+  nav.style.display = nav.style.display === "block" ? "none" : "block";
+}
