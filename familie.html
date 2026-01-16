@@ -2,25 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Familie</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Familie – Deutsch A1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header><h1>Familie</h1></header>
+<header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+  <h1>Familie</h1>
+</header>
 
-<main>
-  <div class="content-box">
-    <ul>
-      <li>Vater – پدر</li>
-      <li>Mutter – مادر</li>
-      <li>Bruder – برادر</li>
-      <li>Schwester – خواهر</li>
-    </ul>
-    <a class="back" href="index.html">← بازگشت</a>
-  </div>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="begrussung.html">👋 Begrüßung</a>
+  <a href="supermarkt.html">🛒 Supermarkt</a>
+  <a href="alltag.html">📅 Alltag</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="grammatik.html">📘 Grammatik</a>
+  <a href="texte.html">📖 Kurze Texte</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
+
+<main class="container">
+  <div class="card">die Familie – خانواده</div>
+  <div class="card">der Vater – پدر</div>
+  <div class="card">die Mutter – مادر</div>
+  <div class="card">der Bruder – برادر</div>
+  <div class="card">die Schwester – خواهر</div>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
