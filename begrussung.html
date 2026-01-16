@@ -2,25 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Begrüßung</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Begrüßung – Deutsch A1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header><h1>Begrüßung</h1></header>
+<header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+  <h1>Begrüßung</h1>
+</header>
 
-<main>
-  <div class="content-box">
-    <ul>
-      <li>Hallo – سلام</li>
-      <li>Guten Morgen – صبح بخیر</li>
-      <li>Guten Tag – روز بخیر</li>
-      <li>Guten Abend – شام بخیر</li>
-    </ul>
-    <a class="back" href="index.html">← بازگشت</a>
-  </div>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="familie.html">👨‍👩‍👧 Familie</a>
+  <a href="supermarkt.html">🛒 Supermarkt</a>
+  <a href="alltag.html">📅 Alltag</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="grammatik.html">📘 Grammatik</a>
+  <a href="texte.html">📖 Kurze Texte</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
+
+<main class="container">
+  <div class="card">Hallo – سلام</div>
+  <div class="card">Guten Morgen – صبح بخیر</div>
+  <div class="card">Guten Tag – روز بخیر</div>
+  <div class="card">Guten Abend – شام بخیر</div>
+  <div class="card">Auf Wiedersehen – خداحافظ</div>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
