@@ -3,31 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Deutsch A1 – Einfach Lernen</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
 </head>
 <body>
 
 <header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
   <h1>Deutsch A1 – Einfach Lernen</h1>
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav id="nav">
-  <a href="index.html">Startseite</a>
-  <a href="texte.html">Kurze Texte</a>
-  <a href="grammatik.html">Grammatik</a>
-  <a href="#">Über uns</a>
-</nav>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="begrussung.html">👋 Begrüßung</a>
+  <a href="familie.html">👨‍👩‍👧 Familie</a>
+  <a href="supermarkt.html">🛒 Supermarkt</a>
+  <a href="alltag.html">📅 Alltag</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="grammatik.html">📘 Grammatik</a>
+  <a href="texte.html">📖 Kurze Texte</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
 
-<main>
-  <div class="category" onclick="location.href='begrussung.html'"><h2>Begrüßung</h2></div>
-  <div class="category" onclick="location.href='familie.html'"><h2>Familie</h2></div>
-  <div class="category" onclick="location.href='supermarkt.html'"><h2>Supermarkt</h2></div>
-  <div class="category" onclick="location.href='alltag.html'"><h2>Alltag</h2></div>
-  <div class="category" onclick="location.href='haus.html'"><h2>Haus</h2></div>
+<main class="container">
+  <a class="card" href="begrussung.html">Begrüßung</a>
+  <a class="card" href="familie.html">Familie</a>
+  <a class="card" href="supermarkt.html">Supermarkt</a>
+  <a class="card" href="alltag.html">Alltag</a>
+  <a class="card" href="haus.html">Haus</a>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
