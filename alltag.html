@@ -2,24 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Alltag</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alltag – Deutsch A1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header><h1>Alltag</h1></header>
+<header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+  <h1>Alltag</h1>
+</header>
 
-<main>
-  <div class="content-box">
-    <ul>
-      <li>Arbeiten – کار کردن</li>
-      <li>Lernen – یاد گرفتن</li>
-      <li>Schlafen – خوابیدن</li>
-    </ul>
-    <a class="back" href="index.html">← بازگشت</a>
-  </div>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="begrussung.html">👋 Begrüßung</a>
+  <a href="familie.html">👨‍👩‍👧 Familie</a>
+  <a href="supermarkt.html">🛒 Supermarkt</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="grammatik.html">📘 Grammatik</a>
+  <a href="texte.html">📖 Kurze Texte</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
+
+<main class="container">
+  <div class="card">aufstehen – بیدار شدن</div>
+  <div class="card">arbeiten – کار کردن</div>
+  <div class="card">lernen – یاد گرفتن</div>
+  <div class="card">essen – غذا خوردن</div>
+  <div class="card">schlafen – خوابیدن</div>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
