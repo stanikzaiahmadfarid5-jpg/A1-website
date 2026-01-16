@@ -2,20 +2,39 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Kurze Texte</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurze Texte – Deutsch A1</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header><h1>Kurze Texte</h1></header>
+<header>
+  <span class="menu-btn" onclick="openMenu()">☰</span>
+  <h1>Kurze Texte</h1>
+</header>
 
-<main>
-  <div class="content-box">
-    <p>Ich heiße Ahmad. Ich lerne Deutsch jeden Tag.</p>
-    <a class="back" href="index.html">← بازگشت</a>
+<div id="menu" class="side-menu">
+  <a href="index.html">🏠 Startseite</a>
+  <a href="begrussung.html">👋 Begrüßung</a>
+  <a href="familie.html">👨‍👩‍👧 Familie</a>
+  <a href="supermarkt.html">🛒 Supermarkt</a>
+  <a href="alltag.html">📅 Alltag</a>
+  <a href="haus.html">🏠 Haus</a>
+  <a href="grammatik.html">📘 Grammatik</a>
+  <a href="#" onclick="closeMenu()">❌ Schließen</a>
+</div>
+
+<main class="container">
+  <div class="card">
+    Hallo! Ich heiße Ahmad.  
+    Ich lerne Deutsch jeden Tag.
+  </div>
+
+  <div class="card">
+    Das ist meine Familie.  
+    Wir wohnen zusammen.
   </div>
 </main>
 
+<script src="script.js"></script>
 </body>
 </html>
