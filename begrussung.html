@@ -8,29 +8,50 @@
 <body>
 
 <header>
-  <span class="menu-btn" onclick="openMenu()">☰</span>
-  <h1>Begrüßung</h1>
+  <nav>
+    <h1>Deutsch A1</h1>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="begrussung.html">Begrüßung</a></li>
+      <li><a href="grammatik.html">Grammatik</a></li>
+      <li><a href="texte.html">Kurze Texte</a></li>
+      <li><a href="index.html#about">Über uns</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div id="menu" class="side-menu">
-  <a href="index.html">🏠 Startseite</a>
-  <a href="familie.html">👨‍👩‍👧 Familie</a>
-  <a href="supermarkt.html">🛒 Supermarkt</a>
-  <a href="alltag.html">📅 Alltag</a>
-  <a href="haus.html">🏠 Haus</a>
-  <a href="grammatik.html">📘 Grammatik</a>
-  <a href="texte.html">📖 Kurze Texte</a>
-  <a href="#" onclick="closeMenu()">❌ Schließen</a>
-</div>
+<main>
+  <div class="content-box">
+    <h2>Begrüßung (احوال‌پرسی)</h2>
 
-<main class="container">
-  <div class="card">Hallo – سلام</div>
-  <div class="card">Guten Morgen – صبح بخیر</div>
-  <div class="card">Guten Tag – روز بخیر</div>
-  <div class="card">Guten Abend – شام بخیر</div>
-  <div class="card">Auf Wiedersehen – خداحافظ</div>
+    <ul class="word-list">
+      <li><strong>Hallo</strong> – سلام</li>
+      <li><strong>Guten Morgen</strong> – صبح بخیر</li>
+      <li><strong>Guten Tag</strong> – روز بخیر</li>
+      <li><strong>Guten Abend</strong> – شام بخیر</li>
+      <li><strong>Gute Nacht</strong> – شب بخیر</li>
+      <li><strong>Wie geht es dir?</strong> – حالت چطور است؟</li>
+      <li><strong>Mir geht es gut</strong> – حالم خوب است</li>
+      <li><strong>Danke</strong> – تشکر</li>
+      <li><strong>Bitte</strong> – لطفاً / خواهش می‌کنم</li>
+      <li><strong>Auf Wiedersehen</strong> – خداحافظ</li>
+      <li><strong>Tschüss</strong> – خداحافظ (خودمانی)</li>
+      <li><strong>Bis bald</strong> – به زودی می‌بینمت</li>
+    </ul>
+
+  </div>
 </main>
 
-<script src="script.js"></script>
+<footer>
+  © 2026 Deutsch A1 Lernwebsite
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
