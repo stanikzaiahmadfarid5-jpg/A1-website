@@ -10,53 +10,80 @@
 <header>
   <nav>
     <h1>Deutsch A1</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
     <ul id="menu">
       <li><a href="index.html">Startseite</a></li>
       <li><a href="grammatik.html">Grammatik</a></li>
       <li><a href="texte.html">Kurze Texte</a></li>
-      <li><a href="#" onclick="alert('Über uns kommt später')">Über uns</a></li>
+      <li><a href="index.html#about">Über uns</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-
   <div class="content-box">
-    <h2>Deutsch A1 – Grammatik</h2>
+    <h2>Grammatik A1</h2>
 
     <div class="grammar-item">
-      <h3>1. Personalpronomen</h3>
-      <p>ich – du – er – sie – es – wir – ihr – sie</p>
-      <p class="example">Beispiel: <strong>Ich lerne Deutsch.</strong></p>
+      <strong>1. Personalpronomen</strong>
+      <p>
+        Ich, du, er, sie, es, wir, ihr, sie
+      </p>
+      <div class="example">
+        <strong>Beispiel:</strong> Ich lerne Deutsch.  
+        <br>
+        <strong>ترجمه:</strong> من زبان آلمانی یاد می‌گیرم.
+      </div>
     </div>
 
     <div class="grammar-item">
-      <h3>2. Verb „sein“</h3>
-      <p>ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind</p>
-      <p class="example">Beispiel: <strong>Ich bin Student.</strong></p>
+      <strong>2. Verb „sein“ (بودن)</strong>
+      <p>
+        ich bin – du bist – er/sie/es ist – wir sind – ihr seid – sie sind
+      </p>
+      <div class="example">
+        <strong>Beispiel:</strong> Ich bin Student.  
+        <br>
+        <strong>ترجمه:</strong> من محصل هستم.
+      </div>
     </div>
 
     <div class="grammar-item">
-      <h3>3. Verb „haben“</h3>
-      <p>ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie haben</p>
-      <p class="example">Beispiel: <strong>Ich habe Zeit.</strong></p>
+      <strong>3. Verb „haben“ (داشتن)</strong>
+      <p>
+        ich habe – du hast – er/sie/es hat – wir haben – ihr habt – sie haben
+      </p>
+      <div class="example">
+        <strong>Beispiel:</strong> Ich habe ein Buch.  
+        <br>
+        <strong>ترجمه:</strong> من یک کتاب دارم.
+      </div>
     </div>
 
     <div class="grammar-item">
-      <h3>4. Satzstellung (Aussagesatz)</h3>
-      <p>Subjekt + Verb + Objekt</p>
-      <p class="example">Beispiel: <strong>Ich lerne Deutsch.</strong></p>
+      <strong>4. Einfache Sätze</strong>
+      <p>
+        Subjekt + Verb + Objekt
+      </p>
+      <div class="example">
+        <strong>Beispiel:</strong> Ich trinke Wasser.  
+        <br>
+        <strong>ترجمه:</strong> من آب می‌نوشم.
+      </div>
     </div>
 
   </div>
-
 </main>
 
 <footer>
-  © 2026 Deutsch A1 – Lernen mit Spaß
+  © 2026 Deutsch A1 Lernwebsite
 </footer>
 
-<script src="script.js"></script>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
