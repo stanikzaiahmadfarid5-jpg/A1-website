@@ -3,62 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <title>Grammatik – Deutsch A1</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <a href="index.html" class="back">← Zurück</a>
-  <h1>Grammatik A1</h1>
+  <nav>
+    <h1>Deutsch A1</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="grammatik.html">Grammatik</a></li>
+      <li><a href="texte.html">Kurze Texte</a></li>
+      <li><a href="#" onclick="alert('Über uns kommt später')">Über uns</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main class="container">
+<main>
 
-  <div class="card">
-    <h3>1. Personalpronomen (ضمیر ها)</h3>
-    <p>
-      ich – من<br>
-      du – تو<br>
-      er / sie – او<br>
-      wir – ما<br>
-      ihr – شما<br>
-      sie – آن‌ها
-    </p>
-  </div>
+  <div class="content-box">
+    <h2>Deutsch A1 – Grammatik</h2>
 
-  <div class="card">
-    <h3>2. Verb „sein“ (بودن)</h3>
-    <p>
-      ich bin – من هستم<br>
-      du bist – تو هستی<br>
-      er/sie ist – او هست<br>
-      wir sind – ما هستیم<br>
-      ihr seid – شما هستید<br>
-      sie sind – آن‌ها هستند
-    </p>
-  </div>
+    <div class="grammar-item">
+      <h3>1. Personalpronomen</h3>
+      <p>ich – du – er – sie – es – wir – ihr – sie</p>
+      <p class="example">Beispiel: <strong>Ich lerne Deutsch.</strong></p>
+    </div>
 
-  <div class="card">
-    <h3>3. Satzbau (ساختار جمله)</h3>
-    <p>
-      فعل همیشه در جای دوم می‌آید.<br><br>
-      مثال:<br>
-      Ich lerne Deutsch.<br>
-      Ich gehe nach Hause.
-    </p>
-  </div>
+    <div class="grammar-item">
+      <h3>2. Verb „sein“</h3>
+      <p>ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind</p>
+      <p class="example">Beispiel: <strong>Ich bin Student.</strong></p>
+    </div>
 
-  <div class="card">
-    <h3>4. Artikel (der / die / das)</h3>
-    <p>
-      der Mann – مرد<br>
-      die Frau – زن<br>
-      das Haus – خانه
-    </p>
+    <div class="grammar-item">
+      <h3>3. Verb „haben“</h3>
+      <p>ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie haben</p>
+      <p class="example">Beispiel: <strong>Ich habe Zeit.</strong></p>
+    </div>
+
+    <div class="grammar-item">
+      <h3>4. Satzstellung (Aussagesatz)</h3>
+      <p>Subjekt + Verb + Objekt</p>
+      <p class="example">Beispiel: <strong>Ich lerne Deutsch.</strong></p>
+    </div>
+
   </div>
 
 </main>
 
+<footer>
+  © 2026 Deutsch A1 – Lernen mit Spaß
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
