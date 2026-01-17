@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,93 +7,148 @@
 }
 
 body {
-  background: #f1f5f9;
-  color: #1f2937;
+  background: #f4f6f8;
+  color: #222;
+  line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
 header {
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  background: linear-gradient(135deg, #000000, #dd0000);
   color: white;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
-/* ===== MENU BUTTON ===== */
-.menu-btn {
+/* ===== NAV ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ===== HAMBURGER ===== */
+.menu-toggle {
+  display: none;
   font-size: 26px;
   cursor: pointer;
 }
 
-/* ===== SIDE MENU ===== */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #0f172a;
-  padding-top: 60px;
-  transition: 0.3s ease;
-  z-index: 1000;
-}
-
-.side-menu a {
-  display: block;
-  padding: 14px 20px;
-  color: #e5e7eb;
-  text-decoration: none;
-  font-size: 16px;
-  border-bottom: 1px solid #1e293b;
-}
-
-.side-menu a:hover {
-  background: #2563eb;
-  color: white;
-}
-
 /* ===== MAIN ===== */
-.container {
-  padding: 22px;
+main {
+  padding: 30px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===== CATEGORY CARDS ===== */
+.categories {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-/* ===== CARD ===== */
-.card {
+.category-card {
   background: white;
-  border-radius: 16px;
-  padding: 24px;
-  font-size: 18px;
+  border-radius: 14px;
+  padding: 25px 20px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.5s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-/* ===== LINKS ===== */
-.card a {
+.category-card a {
   text-decoration: none;
-  color: #1e3a8a;
-  font-weight: bold;
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-/* ===== DESKTOP ===== */
-@media (min-width: 768px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== CONTENT BOX ===== */
+.content-box {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 25px;
+}
+
+.content-box h2 {
+  margin-bottom: 15px;
+  color: #dd0000;
+}
+
+/* ===== TEXT + TRANSLATION ===== */
+.text-item {
+  margin-bottom: 18px;
+}
+
+.text-item p {
+  margin-bottom: 5px;
+}
+
+.text-item .translation {
+  color: #555;
+  font-size: 14px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: white;
   }
 }
