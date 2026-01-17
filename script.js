@@ -1,24 +1,17 @@
-// ===== MENU =====
-function openMenu() {
-  document.getElementById("menu").style.left = "0";
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  if (menu.style.left === "0px") {
+    menu.style.left = "-260px";
+  } else {
+    menu.style.left = "0px";
+  }
 }
 
-function closeMenu() {
-  document.getElementById("menu").style.left = "-260px";
-}
-
-// ===== CARD ANIMATION ON LOAD =====
-window.addEventListener("load", () => {
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach((card, index) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-
+window.onload = () => {
+  document.querySelectorAll(".card").forEach((card, i) => {
     setTimeout(() => {
-      card.style.transition = "0.5s ease";
       card.style.opacity = "1";
       card.style.transform = "translateY(0)";
-    }, index * 120);
+    }, i * 120);
   });
-});
+};
