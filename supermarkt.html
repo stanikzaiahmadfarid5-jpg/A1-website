@@ -8,29 +8,60 @@
 <body>
 
 <header>
-  <span class="menu-btn" onclick="openMenu()">☰</span>
-  <h1>Supermarkt</h1>
+  <nav>
+    <h1>Deutsch A1</h1>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="begrussung.html">Begrüßung</a></li>
+      <li><a href="familie.html">Familie</a></li>
+      <li><a href="supermarkt.html">Supermarkt</a></li>
+      <li><a href="grammatik.html">Grammatik</a></li>
+      <li><a href="texte.html">Kurze Texte</a></li>
+      <li><a href="index.html#about">Über uns</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div id="menu" class="side-menu">
-  <a href="index.html">🏠 Startseite</a>
-  <a href="begrussung.html">👋 Begrüßung</a>
-  <a href="familie.html">👨‍👩‍👧 Familie</a>
-  <a href="alltag.html">📅 Alltag</a>
-  <a href="haus.html">🏠 Haus</a>
-  <a href="grammatik.html">📘 Grammatik</a>
-  <a href="texte.html">📖 Kurze Texte</a>
-  <a href="#" onclick="closeMenu()">❌ Schließen</a>
-</div>
+<main>
+  <div class="content-box">
+    <h2>Supermarkt (سوپرمارکت)</h2>
 
-<main class="container">
-  <div class="card">das Brot – نان</div>
-  <div class="card">die Milch – شیر</div>
-  <div class="card">das Wasser – آب</div>
-  <div class="card">der Preis – قیمت</div>
-  <div class="card">bezahlen – پرداخت کردن</div>
+    <ul class="word-list">
+      <li><strong>der Supermarkt</strong> – سوپرمارکت</li>
+      <li><strong>das Brot</strong> – نان</li>
+      <li><strong>die Milch</strong> – شیر</li>
+      <li><strong>das Wasser</strong> – آب</li>
+      <li><strong>der Reis</strong> – برنج</li>
+      <li><strong>das Fleisch</strong> – گوشت</li>
+      <li><strong>das Gemüse</strong> – سبزیجات</li>
+      <li><strong>das Obst</strong> – میوه</li>
+      <li><strong>der Apfel</strong> – سیب</li>
+      <li><strong>die Banane</strong> – موز</li>
+      <li><strong>der Preis</strong> – قیمت</li>
+      <li><strong>billig</strong> – ارزان</li>
+      <li><strong>teuer</strong> – گران</li>
+      <li><strong>kaufen</strong> – خریدن</li>
+      <li><strong>bezahlen</strong> – پرداخت کردن</li>
+      <li><strong>die Kasse</strong> – صندوق</li>
+      <li><strong>die Tüte</strong> – بکس/پاکت</li>
+      <li><strong>offen</strong> – باز</li>
+      <li><strong>geschlossen</strong> – بسته</li>
+      <li><strong>frisch</strong> – تازه</li>
+    </ul>
+
+  </div>
 </main>
 
-<script src="script.js"></script>
+<footer>
+  © 2026 Deutsch A1 Lernwebsite
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
