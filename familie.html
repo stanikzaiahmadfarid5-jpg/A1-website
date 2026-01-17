@@ -8,29 +8,59 @@
 <body>
 
 <header>
-  <span class="menu-btn" onclick="openMenu()">☰</span>
-  <h1>Familie</h1>
+  <nav>
+    <h1>Deutsch A1</h1>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="begrussung.html">Begrüßung</a></li>
+      <li><a href="familie.html">Familie</a></li>
+      <li><a href="grammatik.html">Grammatik</a></li>
+      <li><a href="texte.html">Kurze Texte</a></li>
+      <li><a href="index.html#about">Über uns</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div id="menu" class="side-menu">
-  <a href="index.html">🏠 Startseite</a>
-  <a href="begrussung.html">👋 Begrüßung</a>
-  <a href="supermarkt.html">🛒 Supermarkt</a>
-  <a href="alltag.html">📅 Alltag</a>
-  <a href="haus.html">🏠 Haus</a>
-  <a href="grammatik.html">📘 Grammatik</a>
-  <a href="texte.html">📖 Kurze Texte</a>
-  <a href="#" onclick="closeMenu()">❌ Schließen</a>
-</div>
+<main>
+  <div class="content-box">
+    <h2>Familie (خانواده)</h2>
 
-<main class="container">
-  <div class="card">die Familie – خانواده</div>
-  <div class="card">der Vater – پدر</div>
-  <div class="card">die Mutter – مادر</div>
-  <div class="card">der Bruder – برادر</div>
-  <div class="card">die Schwester – خواهر</div>
+    <ul class="word-list">
+      <li><strong>die Familie</strong> – خانواده</li>
+      <li><strong>der Vater</strong> – پدر</li>
+      <li><strong>die Mutter</strong> – مادر</li>
+      <li><strong>der Sohn</strong> – پسر</li>
+      <li><strong>die Tochter</strong> – دختر</li>
+      <li><strong>der Bruder</strong> – برادر</li>
+      <li><strong>die Schwester</strong> – خواهر</li>
+      <li><strong>die Eltern</strong> – والدین</li>
+      <li><strong>die Kinder</strong> – فرزندان</li>
+      <li><strong>der Mann</strong> – شوهر / مرد</li>
+      <li><strong>die Frau</strong> – زن / همسر</li>
+      <li><strong>der Opa</strong> – پدرکلان</li>
+      <li><strong>die Oma</strong> – مادرکلان</li>
+      <li><strong>der Onkel</strong> – کاکا / دایی</li>
+      <li><strong>die Tante</strong> – خاله / عمه</li>
+      <li><strong>die Cousine</strong> – دختر کاکا/خاله</li>
+      <li><strong>der Cousin</strong> – پسر کاکا/خاله</li>
+      <li><strong>verheiratet</strong> – متأهل</li>
+      <li><strong>ledig</strong> – مجرد</li>
+      <li><strong>zusammen</strong> – باهم</li>
+    </ul>
+
+  </div>
 </main>
 
-<script src="script.js"></script>
+<footer>
+  © 2026 Deutsch A1 Lernwebsite
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
