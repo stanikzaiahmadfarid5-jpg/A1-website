@@ -8,29 +8,61 @@
 <body>
 
 <header>
-  <span class="menu-btn" onclick="openMenu()">☰</span>
-  <h1>Alltag</h1>
+  <nav>
+    <h1>Deutsch A1</h1>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="begrussung.html">Begrüßung</a></li>
+      <li><a href="familie.html">Familie</a></li>
+      <li><a href="supermarkt.html">Supermarkt</a></li>
+      <li><a href="alltag.html">Alltag</a></li>
+      <li><a href="grammatik.html">Grammatik</a></li>
+      <li><a href="texte.html">Kurze Texte</a></li>
+      <li><a href="index.html#about">Über uns</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div id="menu" class="side-menu">
-  <a href="index.html">🏠 Startseite</a>
-  <a href="begrussung.html">👋 Begrüßung</a>
-  <a href="familie.html">👨‍👩‍👧 Familie</a>
-  <a href="supermarkt.html">🛒 Supermarkt</a>
-  <a href="haus.html">🏠 Haus</a>
-  <a href="grammatik.html">📘 Grammatik</a>
-  <a href="texte.html">📖 Kurze Texte</a>
-  <a href="#" onclick="closeMenu()">❌ Schließen</a>
-</div>
+<main>
+  <div class="content-box">
+    <h2>Alltag (زندگی روزمره)</h2>
 
-<main class="container">
-  <div class="card">aufstehen – بیدار شدن</div>
-  <div class="card">arbeiten – کار کردن</div>
-  <div class="card">lernen – یاد گرفتن</div>
-  <div class="card">essen – غذا خوردن</div>
-  <div class="card">schlafen – خوابیدن</div>
+    <ul class="word-list">
+      <li><strong>aufstehen</strong> – بیدار شدن</li>
+      <li><strong>schlafen</strong> – خوابیدن</li>
+      <li><strong>arbeiten</strong> – کار کردن</li>
+      <li><strong>lernen</strong> – درس خواندن</li>
+      <li><strong>essen</strong> – خوردن</li>
+      <li><strong>trinken</strong> – نوشیدن</li>
+      <li><strong>gehen</strong> – رفتن</li>
+      <li><strong>kommen</strong> – آمدن</li>
+      <li><strong>fahren</strong> – رفتن با وسیله</li>
+      <li><strong>lesen</strong> – خواندن</li>
+      <li><strong>schreiben</strong> – نوشتن</li>
+      <li><strong>fernsehen</strong> – تلویزیون دیدن</li>
+      <li><strong>Musik hören</strong> – موسیقی گوش دادن</li>
+      <li><strong>der Morgen</strong> – صبح</li>
+      <li><strong>der Nachmittag</strong> – بعد از ظهر</li>
+      <li><strong>der Abend</strong> – شام</li>
+      <li><strong>die Nacht</strong> – شب</li>
+      <li><strong>jeden Tag</strong> – هر روز</li>
+      <li><strong>oft</strong> – اغلب</li>
+      <li><strong>manchmal</strong> – گاهی</li>
+    </ul>
+
+  </div>
 </main>
 
-<script src="script.js"></script>
+<footer>
+  © 2026 Deutsch A1 Lernwebsite
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
