@@ -10,49 +10,71 @@
 <header>
   <nav>
     <h1>Deutsch A1</h1>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
     <ul id="menu">
       <li><a href="index.html">Startseite</a></li>
       <li><a href="grammatik.html">Grammatik</a></li>
       <li><a href="texte.html">Kurze Texte</a></li>
-      <li><a href="#" onclick="alert('Über uns kommt später')">Über uns</a></li>
+      <li><a href="index.html#about">Über uns</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-
   <div class="content-box">
-    <h2>Kurze Texte mit Übersetzung</h2>
+    <h2>Kurze Texte (A1)</h2>
 
-    <div class="text-item">
-      <p><strong>Ich lerne Deutsch jeden Tag.</strong></p>
-      <p class="translation">من هر روز زبان آلمانی یاد می‌گیرم.</p>
+    <div class="grammar-item">
+      <strong>Text 1: Mein Tag</strong>
+      <p>
+        Ich stehe morgens um sieben Uhr auf. Danach frühstücke ich und gehe zur Arbeit.
+        Am Abend sehe ich fern oder lese ein Buch.
+      </p>
+      <div class="example">
+        <strong>ترجمه:</strong>  
+        من صبح ساعت هفت بیدار می‌شوم. بعد صبحانه می‌خورم و به کار می‌روم.
+        عصر تلویزیون می‌بینم یا کتاب می‌خوانم.
+      </div>
     </div>
 
-    <div class="text-item">
-      <p><strong>Am Morgen trinke ich Kaffee und lese ein Buch.</strong></p>
-      <p class="translation">صبح قهوه می‌نوشم و یک کتاب می‌خوانم.</p>
+    <div class="grammar-item">
+      <strong>Text 2: Meine Familie</strong>
+      <p>
+        Ich habe eine kleine Familie. Wir wohnen zusammen in einem Haus.
+        Meine Familie ist sehr wichtig für mich.
+      </p>
+      <div class="example">
+        <strong>ترجمه:</strong>  
+        من یک خانواده کوچک دارم. ما باهم در یک خانه زندگی می‌کنیم.
+        خانواده‌ام برایم بسیار مهم است.
+      </div>
     </div>
 
-    <div class="text-item">
-      <p><strong>Meine Familie ist sehr wichtig für mich und wir essen oft zusammen.</strong></p>
-      <p class="translation">خانواده‌ام برایم بسیار مهم است و ما اغلب با هم غذا می‌خوریم.</p>
-    </div>
-
-    <div class="text-item">
-      <p><strong>Am Wochenende gehe ich spazieren oder treffe meine Freunde.</strong></p>
-      <p class="translation">آخر هفته‌ها قدم می‌زنم یا با دوستانم ملاقات می‌کنم.</p>
+    <div class="grammar-item">
+      <strong>Text 3: Einkaufen</strong>
+      <p>
+        Ich gehe oft in den Supermarkt. Dort kaufe ich Brot, Milch und Obst.
+        Einkaufen macht mir Spaß.
+      </p>
+      <div class="example">
+        <strong>ترجمه:</strong>  
+        من زیاد به سوپرمارکت می‌روم. آنجا نان، شیر و میوه می‌خرم.
+        خرید کردن برایم لذت‌بخش است.
+      </div>
     </div>
 
   </div>
-
 </main>
 
 <footer>
-  © 2026 Deutsch A1 – Lernen mit Spaß
+  © 2026 Deutsch A1 Lernwebsite
 </footer>
 
-<script src="script.js"></script>
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
