@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch A1 Einfach</title>
 
+<style>
+:root{
+  --main:#1f3c88;
+  --light:#f5f7fb;
+  --accent:#f4c430;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+
+body{
+  background:var(--light);
+  color:#333;
+}
+
+header{
+  background:var(--main);
+  color:white;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+header h1{
+  font-size:20px;
+}
+
+.menu-btn{
+  font-size:26px;
+  cursor:pointer;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  right:-260px;
+  width:250px;
+  height:100%;
+  background:#fff;
+  box-shadow:-3px 0 10px rgba(0,0,0,.2);
+  padding:20px;
+  transition:.3s;
+}
+
+nav a{
+  display:block;
+  padding:12px 0;
+  color:#333;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:var(--main);
+}
+
+nav.active{
+  right:0;
+}
+
+.overlay{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.4);
+}
+
+.overlay.active{display:block}
+
+main{
+  padding:20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.hero{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  margin-bottom:25px;
+}
+
+.hero h2{
+  color:var(--main);
+  margin-bottom:10px;
+}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+  border-top:5px solid var(--main);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  color:var(--main);
+  margin-bottom:5px;
+}
+
+.section{
+  display:none;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+.section h2{
+  color:var(--main);
+  margin-bottom:15px;
+}
+
+.word{
+  margin-bottom:8px;
+}
+
+.word span{
+  color:var(--accent);
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Deutsch A1 Einfach</h1>
+  <div class="menu-btn" onclick="openMenu()">☰</div>
+</header>
+
+<div class="overlay" onclick="closeMenu()"></div>
+
+<nav id="menu">
+  <a href="#" onclick="showHome()">Startseite</a>
+  <a href="#" onclick="showSection('grammatik')">Grammatik</a>
+  <a href="#" onclick="showSection('texte')">Kurze Texte</a>
+  <a href="#" onclick="showSection('about')">Über uns</a>
+</nav>
+
+<main>
+
+<div class="hero" id="home">
+  <h2>Willkommen!</h2>
+  <p>Deutsch lernen – einfach, klar und Schritt für Schritt.</p>
+</div>
+
+<div class="categories" id="categories">
+  <div class="card" onclick="showSection('begrussung')"><h3>Begrüßung</h3><p>سلام و احوالپرسی</p></div>
+  <div class="card" onclick="showSection('familie')"><h3>Familie</h3><p>خانواده</p></div>
+  <div class="card" onclick="showSection('supermarkt')"><h3>Supermarkt</h3><p>سوپرمارکت</p></div>
+  <div class="card" onclick="showSection('alltag')"><h3>Alltag</h3><p>زندگی روزمره</p></div>
+  <div class="card" onclick="showSection('haus')"><h3>Haus</h3><p>خانه</p></div>
+</div>
+
+<!-- SECTIONS -->
+<div class="section" id="begrussung">
+  <h2>Begrüßung</h2>
+  <div class="word">Hallo – <span>سلام</span></div>
+  <div class="word">Guten Morgen – <span>صبح بخیر</span></div>
+</div>
+
+<div class="section" id="familie">
+  <h2>Familie</h2>
+  <div class="word">Vater – <span>پدر</span></div>
+  <div class="word">Mutter – <span>مادر</span></div>
+</div>
+
+<div class="section" id="supermarkt">
+  <h2>Supermarkt</h2>
+  <div class="word">Brot – <span>نان</span></div>
+  <div class="word">Milch – <span>شیر</span></div>
+</div>
+
+<div class="section" id="alltag">
+  <h2>Alltag</h2>
+  <div class="word">arbeiten – <span>کار کردن</span></div>
+</div>
+
+<div class="section" id="haus">
+  <h2>Haus</h2>
+  <div class="word">Zimmer – <span>اتاق</span></div>
+</div>
+
+<div class="section" id="grammatik">
+  <h2>Grammatik</h2>
+  <p>Ich bin – من هستم</p>
+  <p>Du bist – تو هستی</p>
+</div>
+
+<div class="section" id="texte">
+  <h2>Kurze Texte</h2>
+  <p><b>Ich heiße Ahmad.</b><br>نام من احمد است.</p>
+</div>
+
+<div class="section" id="about">
+  <h2>Über uns</h2>
+  <p>Diese Website hilft beim Deutschlernen auf A1-Niveau.</p>
+</div>
+
+</main>
+
+<footer>
+© Deutsch A1 Einfach
+</footer>
+
+<script>
+function openMenu(){
+  document.getElementById("menu").classList.add("active");
+  document.querySelector(".overlay").classList.add("active");
+}
+function closeMenu(){
+  document.getElementById("menu").classList.remove("active");
+  document.querySelector(".overlay").classList.remove("active");
+}
+function showSection(id){
+  document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+  document.getElementById("home").style.display="none";
+  document.getElementById("categories").style.display="none";
+  document.getElementById(id).style.display="block";
+  closeMenu();
+}
+function showHome(){
+  document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+  document.getElementById("home").style.display="block";
+  document.getElementById("categories").style.display="grid";
+  closeMenu();
+}
+</script>
+
+</body>
+</html>
