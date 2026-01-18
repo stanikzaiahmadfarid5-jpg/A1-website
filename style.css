@@ -1,143 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  background: #f4f6f8;
-  color: #333;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
 }
 
-/* ---------- NAVBAR ---------- */
-header {
-  background: #111;
+.top {
+  background: #1f3c88;
+  color: white;
   padding: 15px;
-}
-
-nav {
-  max-width: 1100px;
-  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-nav h1 {
-  color: #fff;
-  font-size: 22px;
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 10px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  color: #ffce00;
-}
-
-.menu-toggle {
+.menu {
   display: none;
-  color: #fff;
-  font-size: 26px;
-  cursor: pointer;
+  background: #1f3c88;
 }
 
-/* ---------- MOBILE MENU ---------- */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 15px;
-    padding: 15px;
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* ---------- MAIN CONTENT ---------- */
-main {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 15px;
-}
-
-.content-box {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.content-box h2 {
-  margin-bottom: 20px;
-  color: #111;
-}
-
-/* ---------- CATEGORY CARDS ---------- */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.category {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.category:hover {
-  transform: translateY(-5px);
-}
-
-.category a {
+.menu a {
+  display: block;
+  color: white;
+  padding: 12px;
   text-decoration: none;
-  color: #111;
-  font-size: 18px;
-  font-weight: bold;
 }
 
-/* ---------- GRAMMAR ---------- */
-.grammar-item {
-  margin-bottom: 25px;
-  padding: 15px;
-  border-left: 5px solid #ffce00;
-  background: #f9f9f9;
+.menu a:hover {
+  background: #162d66;
 }
 
-.example {
-  margin-top: 8px;
-  font-style: italic;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-  margin-top: 40px;
+main {
   padding: 20px;
-  background: #111;
-  color: #fff;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 15px;
+  border-radius: 12px;
   text-align: center;
-  font-size: 14px;
+  font-size: 20px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #1f3c88;
+  font-weight: bold;
 }
