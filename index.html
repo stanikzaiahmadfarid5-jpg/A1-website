@@ -1,147 +1,201 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>A1 Deutsch Einfach</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Deutsch A1 – Einfach Lernen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --main:#6a5acd;
-      --bg:#f4f5f7;
-      --card:#ffffff;
-    }
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f2f4f8;
+  color:#333;
+}
 
-    body{
-      margin:0;
-      font-family:Arial, Helvetica, sans-serif;
-      background:var(--bg);
-      color:#333;
-    }
+header{
+  background:#1e3a8a;
+  color:white;
+  padding:16px;
+  text-align:center;
+}
 
-    header{
-      background:var(--main);
-      padding:15px;
-    }
+header h1{
+  margin:0;
+  font-size:22px;
+}
 
-    nav{
-      max-width:1000px;
-      margin:auto;
-      display:flex;
-      gap:15px;
-      flex-wrap:wrap;
-    }
+main{
+  max-width:900px;
+  margin:auto;
+  padding:16px;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      padding:8px 12px;
-      border-radius:6px;
-    }
+.section{
+  background:white;
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:16px;
+}
 
-    nav a:hover{
-      background:rgba(255,255,255,0.2);
-    }
+details{
+  background:white;
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:14px;
+}
 
-    main{
-      max-width:1000px;
-      margin:30px auto;
-      padding:0 15px;
-    }
+summary{
+  font-size:20px;
+  font-weight:bold;
+  color:#1e3a8a;
+  cursor:pointer;
+  list-style:none;
+}
 
-    .card{
-      background:var(--card);
-      padding:25px;
-      border-radius:12px;
-      margin-bottom:25px;
-    }
+summary::-webkit-details-marker{
+  display:none;
+}
 
-    h1{
-      margin-top:0;
-      color:var(--main);
-    }
+ul{
+  margin-top:14px;
+  padding-left:20px;
+}
 
-    ul{
-      list-style:none;
-      padding:0;
-    }
+li{
+  margin-bottom:8px;
+  font-size:16px;
+}
 
-    li{
-      padding:6px 0;
-      font-size:18px;
-    }
-  </style>
+.text-card{
+  background:#f9fafb;
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:14px;
+}
+
+hr{
+  border:none;
+  border-top:1px solid #ddd;
+  margin:12px 0;
+}
+
+footer{
+  text-align:center;
+  font-size:14px;
+  color:#666;
+  padding:16px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <a href="#home">Startseite</a>
-    <a href="#begrussung">Begrüßung</a>
-    <a href="#familie">Familie</a>
-    <a href="#supermarkt">Supermarkt</a>
-    <a href="#alltag">Alltag</a>
-    <a href="#haus">Haus</a>
-  </nav>
+  <h1>Deutsch A1 – Einfach Lernen</h1>
 </header>
 
 <main>
 
-  <section id="home" class="card">
-    <h1>Willkommen – A1 Deutsch Einfach</h1>
-    <p>Deutsch lernen leicht gemacht.</p>
-  </section>
+<div class="section">
+  <p>Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</p>
+</div>
 
-  <section id="familie" class="card">
-    <h1>Familie</h1>
-    <ul>
-      <li>die Familie – خانواده</li>
-      <li>der Vater – پدر</li>
-      <li>die Mutter – مادر</li>
-      <li>der Bruder – برادر</li>
-      <li>die Schwester – خواهر</li>
-      <li>der Sohn – پسر</li>
-      <li>die Tochter – دختر</li>
-      <li>die Eltern – والدین</li>
-      <li>die Kinder – کودکان</li>
-    </ul>
-  </section>
+<details>
+<summary>Begrüßung</summary>
+<ul>
+  <li>Hallo — سلام</li>
+  <li>Guten Morgen — صبح بخیر</li>
+  <li>Guten Tag — روز بخیر</li>
+  <li>Guten Abend — عصر بخیر</li>
+  <li>Auf Wiedersehen — خداحافظ</li>
+</ul>
+</details>
 
-  <section id="supermarkt" class="card">
-    <h1>Supermarkt</h1>
-    <ul>
-      <li>der Supermarkt – سوپرمارکت</li>
-      <li>das Brot – نان</li>
-      <li>die Milch – شیر</li>
-      <li>das Wasser – آب</li>
-      <li>der Preis – قیمت</li>
-    </ul>
-  </section>
+<details>
+<summary>Familie</summary>
+<ul>
+  <li>die Familie — خانواده</li>
+  <li>der Vater — پدر</li>
+  <li>die Mutter — مادر</li>
+  <li>der Bruder — برادر</li>
+  <li>die Schwester — خواهر</li>
+</ul>
+</details>
 
-  <section id="alltag" class="card">
-    <h1>Alltag</h1>
-    <ul>
-      <li>aufstehen – بیدار شدن</li>
-      <li>arbeiten – کار کردن</li>
-      <li>lernen – یاد گرفتن</li>
-      <li>essen – غذا خوردن</li>
-      <li>schlafen – خوابیدن</li>
-    </ul>
-  </section>
+<details>
+<summary>Supermarkt</summary>
+<ul>
+  <li>der Supermarkt — سوپرمارکت</li>
+  <li>das Brot — نان</li>
+  <li>die Milch — شیر</li>
+  <li>das Wasser — آب</li>
+  <li>bezahlen — پرداخت کردن</li>
+</ul>
+</details>
 
-  <section id="haus" class="card">
-    <h1>Haus</h1>
-    <ul>
-      <li>das Haus – خانه</li>
-      <li>das Zimmer – اتاق</li>
-      <li>die Küche – آشپزخانه</li>
-      <li>das Bad – حمام</li>
-    </ul>
-  </section>
+<details>
+<summary>Alltag</summary>
+<ul>
+  <li>arbeiten — کار کردن</li>
+  <li>lernen — یاد گرفتن</li>
+  <li>essen — غذا خوردن</li>
+  <li>schlafen — خوابیدن</li>
+</ul>
+</details>
+
+<details>
+<summary>Haus</summary>
+<ul>
+  <li>das Haus — خانه</li>
+  <li>das Zimmer — اتاق</li>
+  <li>die Küche — آشپزخانه</li>
+  <li>das Bad — حمام</li>
+</ul>
+</details>
+
+<details>
+<summary>Grammatik</summary>
+<ul>
+  <li>ich bin — من هستم</li>
+  <li>du bist — تو هستی</li>
+  <li>er / sie ist — او است</li>
+  <li>haben — داشتن</li>
+  <li>sein — بودن</li>
+</ul>
+</details>
+
+<details>
+<summary>Kurze Texte</summary>
+
+<div class="text-card">
+<p><strong>Ich heiße Ahmad.</strong></p>
+<p>Ich lerne Deutsch, weil ich in Deutschland leben möchte.  
+Ich übe jeden Tag und mache Fortschritte.</p>
+<hr>
+<p><strong>ترجمه:</strong></p>
+<p>نام من احمد است. من آلمانی یاد می‌گیرم چون می‌خواهم در آلمان زندگی کنم.  
+هر روز تمرین می‌کنم و پیشرفت می‌کنم.</p>
+</div>
+
+<div class="text-card">
+<p><strong>Mein Alltag ist einfach.</strong></p>
+<p>Ich stehe früh auf und trinke Tee.  
+Dann lerne ich Deutsch oder arbeite.</p>
+<hr>
+<p><strong>ترجمه:</strong></p>
+<p>زندگی روزمره من ساده است.  
+زود بیدار می‌شوم، چای می‌نوشم و بعد آلمانی می‌خوانم یا کار می‌کنم.</p>
+</div>
+
+</details>
 
 </main>
+
+<footer>
+© 2026 Deutsch A1 Lernwebsite
+</footer>
 
 </body>
 </html>
