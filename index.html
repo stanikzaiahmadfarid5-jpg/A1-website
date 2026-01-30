@@ -148,7 +148,10 @@ footer{
 
 <!-- ===== MENU PANEL ===== -->
 <div class="menu-panel" id="menu">
-  <h2>Menü</h2>
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <h2>Menü</h2>
+    <div style="font-size:22px;cursor:pointer;" onclick="closeMenu()">✖</div>
+  </div>
 
   <div class="menu-item" onclick="toggleMenuText('u')">Über uns</div>
   <div class="menu-content" id="u">
@@ -168,6 +171,7 @@ footer{
     die Deutsch einfach und ohne Stress lernen möchten.
   </div>
 </div>
+
 
 <header>
 <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -271,6 +275,10 @@ sie hat — او دارد<br>wir haben — ما داریم<br>ihr habt — شم�
 <script>
 function toggleMenu(){
   document.getElementById("menu").classList.toggle("active");
+}
+
+function closeMenu(){
+  document.getElementById("menu").classList.remove("active");
 }
 
 function toggleMenuText(id){
