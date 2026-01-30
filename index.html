@@ -15,7 +15,7 @@ body{
   color:#333;
 }
 
-/* ===== Header ===== */
+/* ===== HEADER ===== */
 header{
   background:#2f7d5a;
   color:white;
@@ -24,58 +24,42 @@ header{
   position:relative;
 }
 
-/* ===== Hamburger Button ===== */
-.menu-btn{
+/* ===== MENU ICON ===== */
+.menu-icon{
   position:absolute;
-  left:16px;
+  left:15px;
   top:18px;
   font-size:26px;
   cursor:pointer;
   user-select:none;
 }
 
-/* ===== Side Menu ===== */
+/* ===== SIDE MENU ===== */
 .side-menu{
   position:fixed;
   top:0;
   left:-260px;
-  width:260px;
+  width:250px;
   height:100%;
   background:#2f7d5a;
-  color:white;
   padding:20px;
   transition:0.3s;
   z-index:1000;
-}
-
-.side-menu h3{
-  margin-top:0;
-  font-size:20px;
-  margin-bottom:20px;
 }
 
 .side-menu a{
   display:block;
   color:white;
   text-decoration:none;
+  margin:12px 0;
   font-size:18px;
-  margin-bottom:14px;
-  padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,0.2);
 }
 
-/* ===== Overlay ===== */
-.overlay{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.3);
-  display:none;
-  z-index:900;
+.side-menu a:hover{
+  text-decoration:underline;
 }
 
+/* ===== MAIN ===== */
 main{
   max-width:900px;
   margin:auto;
@@ -145,27 +129,35 @@ footer{
 
 <body>
 
-<!-- ===== Side Menu ===== -->
-<div class="side-menu" id="sideMenu">
-  <h3>Menü</h3>
-  <a href="#">Über uns</a>
-  <a href="#">Wie lernen?</a>
-  <a href="#">Für wen ist diese Seite?</a>
+<!-- ===== SIDE MENU ===== -->
+<div class="side-menu" id="menu">
+  <a href="#uber">Über uns</a>
+  <a href="#lernen">Wie lernen</a>
+  <a href="#wen">Für wen</a>
 </div>
 
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
 <header>
-<span class="menu-btn" onclick="openMenu()">☰</span>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
 <h1>Deutsch A1 – Einfach Lernen</h1>
 </header>
 
 <main>
 
-<div class="section">
+<div class="section" id="uber">
 <p>Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</p>
 </div>
 
+<div class="section" id="lernen">
+<p>Einfach, klar und Schritt für Schritt Deutsch lernen.</p>
+</div>
+
+<div class="section" id="wen">
+<p>Für Anfänger, Schüler und alle, die Deutsch A1 lernen wollen.</p>
+</div>
+
+<!-- ===== ORIGINAL CONTENT (UNCHANGED) ===== -->
+
+<!-- Begrüßung -->
 <details>
 <summary>Begrüßung</summary>
 <ul>
@@ -186,6 +178,7 @@ footer{
 </ul>
 </details>
 
+<!-- Familie -->
 <details>
 <summary>Familie</summary>
 <ul>
@@ -207,6 +200,7 @@ footer{
 </ul>
 </details>
 
+<!-- Supermarkt -->
 <details>
 <summary>Supermarkt</summary>
 <ul>
@@ -228,6 +222,7 @@ footer{
 </ul>
 </details>
 
+<!-- Alltag -->
 <details>
 <summary>Alltag</summary>
 <ul>
@@ -246,6 +241,7 @@ footer{
 </ul>
 </details>
 
+<!-- Haus -->
 <details>
 <summary>Haus</summary>
 <ul>
@@ -264,6 +260,7 @@ footer{
 </ul>
 </details>
 
+<!-- Grammatik -->
 <details>
 <summary>Grammatik</summary>
 
@@ -317,6 +314,7 @@ Hast du eine Familie?<br>
 
 </details>
 
+<!-- Kurze Texte -->
 <details>
 <summary>Kurze Texte</summary>
 
@@ -359,14 +357,13 @@ Wir helfen einander jeden Tag.</p>
 </footer>
 
 <script>
-function openMenu(){
-  document.getElementById("sideMenu").style.left="0";
-  document.getElementById("overlay").style.display="block";
-}
-
-function closeMenu(){
-  document.getElementById("sideMenu").style.left="-260px";
-  document.getElementById("overlay").style.display="none";
+function toggleMenu(){
+  var menu = document.getElementById("menu");
+  if(menu.style.left === "0px"){
+    menu.style.left = "-260px";
+  }else{
+    menu.style.left = "0px";
+  }
 }
 </script>
 
