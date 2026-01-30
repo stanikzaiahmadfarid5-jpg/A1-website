@@ -25,55 +25,61 @@ header{
 }
 
 /* ===== HAMBURGER ===== */
-.menu-btn{
+.hamburger{
   position:absolute;
   left:16px;
   top:18px;
-  font-size:28px;
+  font-size:26px;
   cursor:pointer;
   user-select:none;
 }
 
 /* ===== MENU PANEL ===== */
-.menu{
+.menu-panel{
   position:fixed;
   top:0;
-  left:-260px;
-  width:260px;
+  left:-100%;
+  width:80%;
+  max-width:320px;
   height:100%;
   background:#2f7d5a;
   color:white;
-  padding-top:80px;
+  padding:20px;
   transition:0.3s;
-  z-index:999;
+  z-index:1000;
 }
 
-.menu a{
-  display:block;
-  padding:16px 20px;
-  color:white;
-  text-decoration:none;
-  font-size:18px;
-  border-bottom:1px solid rgba(255,255,255,0.2);
-}
-
-.menu a:hover{
-  background:rgba(255,255,255,0.15);
-}
-
-/* ===== OVERLAY ===== */
-.overlay{
-  position:fixed;
-  top:0;
+.menu-panel.active{
   left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.3);
-  display:none;
-  z-index:998;
 }
 
-/* ===== MAIN ===== */
+.menu-panel h2{
+  margin-top:0;
+  font-size:22px;
+  border-bottom:1px solid rgba(255,255,255,0.3);
+  padding-bottom:10px;
+}
+
+.menu-item{
+  margin-top:18px;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:bold;
+}
+
+.menu-content{
+  display:none;
+  margin-top:8px;
+  font-size:15px;
+  font-weight:normal;
+  line-height:1.5;
+  background:rgba(255,255,255,0.1);
+  padding:10px;
+  border-radius:8px;
+}
+
+/* ===== MAIN SITE ===== */
+
 main{
   max-width:900px;
   margin:auto;
@@ -104,9 +110,7 @@ summary{
   list-style:none;
 }
 
-summary::-webkit-details-marker{
-  display:none;
-}
+summary::-webkit-details-marker{display:none}
 
 ul{
   margin-top:14px;
@@ -142,237 +146,136 @@ footer{
 
 <body>
 
-<!-- ===== MENU ===== -->
-<div class="menu" id="menu">
-  <a href="#uber" onclick="closeMenu()">Über uns</a>
-  <a href="#lernen" onclick="closeMenu()">Wie lernen?</a>
-  <a href="#wen" onclick="closeMenu()">Für wen?</a>
+<!-- ===== MENU PANEL ===== -->
+<div class="menu-panel" id="menu">
+  <h2>Menü</h2>
+
+  <div class="menu-item" onclick="toggleMenuText('u')">Über uns</div>
+  <div class="menu-content" id="u">
+    Diese Website hilft dir, Deutsch A1 einfach und Schritt für Schritt zu lernen.
+    Mit einfachen Wörtern, Grammatik und kurzen Texten.
+  </div>
+
+  <div class="menu-item" onclick="toggleMenuText('w')">Wie lernen</div>
+  <div class="menu-content" id="w">
+    Du lernst mit Kategorien, einfachen Erklärungen, Beispielen und kurzen Texten.
+    Alles ist klar, langsam und verständlich aufgebaut.
+  </div>
+
+  <div class="menu-item" onclick="toggleMenuText('f')">Für wen</div>
+  <div class="menu-content" id="f">
+    Für Anfänger (A1), für Migranten, für Schüler, für alle,
+    die Deutsch einfach und ohne Stress lernen möchten.
+  </div>
 </div>
 
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
 <header>
-  <div class="menu-btn" onclick="openMenu()">☰</div>
-  <h1>Deutsch A1 – Einfach Lernen</h1>
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+<h1>Deutsch A1 – Einfach Lernen</h1>
 </header>
 
 <main>
 
-<div class="section" id="uber">
+<div class="section">
 <p>Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</p>
 </div>
 
-<div class="section" id="lernen">
-<p>Einfach, klar und Schritt für Schritt Deutsch lernen.</p>
-</div>
+<!-- ======== ALL CONTENT BELOW = UNCHANGED ======== -->
 
-<div class="section" id="wen">
-<p>Für Anfänger, Schüler und alle, die Deutsch A1 lernen wollen.</p>
-</div>
-
-<!-- ===== محتوا دست‌نخورده ===== -->
-
-<details>
-<summary>Begrüßung</summary>
-<ul>
-<li>Hallo — سلام</li>
-<li>Hi — سلام (غیررسمی)</li>
-<li>Guten Morgen — صبح بخیر</li>
-<li>Guten Tag — روز بخیر</li>
-<li>Guten Abend — عصر بخیر</li>
-<li>Gute Nacht — شب بخیر</li>
-<li>Wie geht es dir? — حالت چطور است؟</li>
-<li>Mir geht es gut — حالم خوب است</li>
-<li>Danke — تشکر</li>
-<li>Vielen Dank — تشکر زیاد</li>
-<li>Bitte — لطفاً / خواهش می‌کنم</li>
-<li>Entschuldigung — ببخشید</li>
-<li>Tschüss — خداحافظ (غیررسمی)</li>
+<!-- Begrüßung -->
+<details><summary>Begrüßung</summary><ul>
+<li>Hallo — سلام</li><li>Hi — سلام (غیررسمی)</li><li>Guten Morgen — صبح بخیر</li>
+<li>Guten Tag — روز بخیر</li><li>Guten Abend — عصر بخیر</li><li>Gute Nacht — شب بخیر</li>
+<li>Wie geht es dir? — حالت چطور است؟</li><li>Mir geht es gut — حالم خوب است</li>
+<li>Danke — تشکر</li><li>Vielen Dank — تشکر زیاد</li><li>Bitte — لطفاً / خواهش می‌کنم</li>
+<li>Entschuldigung — ببخشید</li><li>Tschüss — خداحافظ (غیررسمی)</li>
 <li>Auf Wiedersehen — خداحافظ (رسمی)</li>
-</ul>
-</details>
+</ul></details>
 
-<details>
-<summary>Familie</summary>
-<ul>
-<li>die Familie — خانواده</li>
-<li>der Vater — پدر</li>
-<li>die Mutter — مادر</li>
-<li>der Bruder — برادر</li>
-<li>die Schwester — خواهر</li>
-<li>der Sohn — پسر</li>
-<li>die Tochter — دختر</li>
-<li>der Mann — شوهر</li>
-<li>die Frau — زن</li>
-<li>die Eltern — والدین</li>
-<li>die Kinder — کودکان</li>
-<li>der Großvater — پدربزرگ</li>
-<li>die Großmutter — مادربزرگ</li>
-<li>verheiratet — متأهل</li>
-<li>ledig — مجرد</li>
-</ul>
-</details>
+<!-- Familie -->
+<details><summary>Familie</summary><ul>
+<li>die Familie — خانواده</li><li>der Vater — پدر</li><li>die Mutter — مادر</li>
+<li>der Bruder — برادر</li><li>die Schwester — خواهر</li><li>der Sohn — پسر</li>
+<li>die Tochter — دختر</li><li>der Mann — شوهر</li><li>die Frau — زن</li>
+<li>die Eltern — والدین</li><li>die Kinder — کودکان</li>
+<li>der Großvater — پدربزرگ</li><li>die Großmutter — مادربزرگ</li>
+<li>verheiratet — متأهل</li><li>ledig — مجرد</li>
+</ul></details>
 
-<details>
-<summary>Supermarkt</summary>
-<ul>
-<li>der Supermarkt — سوپرمارکت</li>
-<li>das Brot — نان</li>
-<li>die Milch — شیر</li>
-<li>das Wasser — آب</li>
-<li>der Reis — برنج</li>
-<li>das Fleisch — گوشت</li>
-<li>das Gemüse — سبزیجات</li>
-<li>das Obst — میوه</li>
-<li>der Apfel — سیب</li>
-<li>die Banane — موز</li>
-<li>der Preis — قیمت</li>
-<li>billig — ارزان</li>
-<li>teuer — گران</li>
-<li>kaufen — خریدن</li>
-<li>bezahlen — پرداخت کردن</li>
-</ul>
-</details>
+<!-- Supermarkt -->
+<details><summary>Supermarkt</summary><ul>
+<li>der Supermarkt — سوپرمارکت</li><li>das Brot — نان</li><li>die Milch — شیر</li>
+<li>das Wasser — آب</li><li>der Reis — برنج</li><li>das Fleisch — گوشت</li>
+<li>das Gemüse — سبزیجات</li><li>das Obst — میوه</li><li>der Apfel — سیب</li>
+<li>die Banane — موز</li><li>der Preis — قیمت</li><li>billig — ارزان</li>
+<li>teuer — گران</li><li>kaufen — خریدن</li><li>bezahlen — پرداخت کردن</li>
+</ul></details>
 
-<details>
-<summary>Alltag</summary>
-<ul>
-<li>aufstehen — بیدار شدن</li>
-<li>früh aufstehen — زود بیدار شدن</li>
-<li>lernen — یاد گرفتن</li>
-<li>Deutsch lernen — آلمانی یاد گرفتن</li>
-<li>arbeiten — کار کردن</li>
-<li>zur Arbeit gehen — به کار رفتن</li>
-<li>essen — غذا خوردن</li>
-<li>Frühstück essen — صبحانه خوردن</li>
-<li>trinken — نوشیدن</li>
-<li>schlafen — خوابیدن</li>
-<li>zu Hause bleiben — در خانه ماندن</li>
-<li>fernsehen — تلویزیون دیدن</li>
-</ul>
-</details>
+<!-- Alltag -->
+<details><summary>Alltag</summary><ul>
+<li>aufstehen — بیدار شدن</li><li>früh aufstehen — زود بیدار شدن</li>
+<li>lernen — یاد گرفتن</li><li>Deutsch lernen — آلمانی یاد گرفتن</li>
+<li>arbeiten — کار کردن</li><li>zur Arbeit gehen — به کار رفتن</li>
+<li>essen — غذا خوردن</li><li>Frühstück essen — صبحانه خوردن</li>
+<li>trinken — نوشیدن</li><li>schlafen — خوابیدن</li>
+<li>zu Hause bleiben — در خانه ماندن</li><li>fernsehen — تلویزیون دیدن</li>
+</ul></details>
 
-<details>
-<summary>Haus</summary>
-<ul>
-<li>das Haus — خانه</li>
-<li>die Wohnung — آپارتمان</li>
-<li>das Zimmer — اتاق</li>
-<li>das Schlafzimmer — اتاق خواب</li>
-<li>das Wohnzimmer — اتاق نشیمن</li>
-<li>die Küche — آشپزخانه</li>
-<li>das Bad — حمام</li>
-<li>die Toilette — دستشویی</li>
-<li>der Balkon — بالکن</li>
-<li>die Tür — دروازه</li>
-<li>das Fenster — پنجره</li>
+<!-- Haus -->
+<details><summary>Haus</summary><ul>
+<li>das Haus — خانه</li><li>die Wohnung — آپارتمان</li><li>das Zimmer — اتاق</li>
+<li>das Schlafzimmer — اتاق خواب</li><li>das Wohnzimmer — اتاق نشیمن</li>
+<li>die Küche — آشپزخانه</li><li>das Bad — حمام</li><li>die Toilette — دستشویی</li>
+<li>der Balkon — بالکن</li><li>die Tür — دروازه</li><li>das Fenster — پنجره</li>
 <li>im Haus — در خانه</li>
-</ul>
+</ul></details>
+
+<!-- Grammatik -->
+<details><summary>Grammatik</summary>
+<div class="text-card"><p><strong>sein (بودن)</strong></p><p>
+ich bin — من هستم<br>du bist — تو هستی<br>er ist — او هست (مذکر)<br>
+sie ist — او هست (مونث)<br>wir sind — ما هستیم<br>ihr seid — شما هستید</p></div>
+
+<div class="text-card"><p><strong>haben (داشتن)</strong></p><p>
+ich habe — من دارم<br>du hast — تو داری<br>er hat — او دارد<br>
+sie hat — او دارد<br>wir haben — ما داریم<br>ihr habt — شما دارید</p></div>
+
+<div class="text-card"><p><strong>جمله ساده</strong></p>
+<p>Ich bin Ahmad.<br>من احمد هستم.</p>
+<p>Ich habe eine Familie.<br>من یک خانواده دارم.</p></div>
+
+<div class="text-card"><p><strong>سؤال ساده</strong></p>
+<p>Bist du Ahmad?<br>آیا تو احمد هستی؟</p>
+<p>Hast du eine Familie?<br>آیا تو یک خانواده داری؟</p></div>
 </details>
 
-<details>
-<summary>Grammatik</summary>
+<!-- Kurze Texte -->
+<details><summary>Kurze Texte</summary>
+<div class="text-card"><p><strong>Ich lerne Deutsch.</strong></p>
+<p>Ich lerne Deutsch jeden Tag.<br>Deutsch ist wichtig für mein Leben.</p>
+<hr><p><strong>ترجمه:</strong><br>من هر روز آلمانی یاد می‌گیرم.<br>آلمانی برای زندگی من مهم است.</p></div>
 
-<div class="text-card">
-<p><strong>sein (بودن)</strong></p>
-<p>
-ich bin — من هستم<br>
-du bist — تو هستی<br>
-er ist — او هست (مذکر)<br>
-sie ist — او هست (مونث)<br>
-wir sind — ما هستیم<br>
-ihr seid — شما هستید
-</p>
-</div>
+<div class="text-card"><p><strong>Mein Alltag.</strong></p>
+<p>Ich stehe früh auf und trinke Tee.<br>Dann lerne ich Deutsch zu Hause.</p>
+<hr><p><strong>ترجمه:</strong><br>من زود بیدار می‌شوم و چای می‌نوشم.<br>بعد در خانه آلمانی یاد می‌گیرم.</p></div>
 
-<div class="text-card">
-<p><strong>haben (داشتن)</strong></p>
-<p>
-ich habe — من دارم<br>
-du hast — تو داری<br>
-er hat — او دارد<br>
-sie hat — او دارد<br>
-wir haben — ما داریم<br>
-ihr habt — شما دارید
-</p>
-</div>
-
-<div class="text-card">
-<p><strong>جمله ساده</strong></p>
-<p>
-Ich bin Ahmad.<br>
-من احمد هستم.
-</p>
-<p>
-Ich habe eine Familie.<br>
-من یک خانواده دارم.
-</p>
-</div>
-
-<div class="text-card">
-<p><strong>سؤال ساده</strong></p>
-<p>
-Bist du Ahmad?<br>
-آیا تو احمد هستی؟
-</p>
-<p>
-Hast du eine Familie?<br>
-آیا تو یک خانواده داری؟
-</p>
-</div>
-
-</details>
-
-<details>
-<summary>Kurze Texte</summary>
-
-<div class="text-card">
-<p><strong>Ich lerne Deutsch.</strong></p>
-<p>Ich lerne Deutsch jeden Tag.<br>
-Deutsch ist wichtig für mein Leben.</p>
-<hr>
-<p><strong>ترجمه:</strong><br>
-من هر روز آلمانی یاد می‌گیرم.<br>
-آلمانی برای زندگی من مهم است.</p>
-</div>
-
-<div class="text-card">
-<p><strong>Mein Alltag.</strong></p>
-<p>Ich stehe früh auf und trinke Tee.<br>
-Dann lerne ich Deutsch zu Hause.</p>
-<hr>
-<p><strong>ترجمه:</strong><br>
-من زود بیدار می‌شوم و چای می‌نوشم.<br>
-بعد در خانه آلمانی یاد می‌گیرم.</p>
-</div>
-
-<div class="text-card">
-<p><strong>Meine Familie.</strong></p>
-<p>Meine Familie ist sehr wichtig für mich.<br>
-Wir helfen einander jeden Tag.</p>
-<hr>
-<p><strong>ترجمه:</strong><br>
-خانواده‌ام برای من بسیار مهم است.<br>
-ما هر روز به هم کمک می‌کنیم.</p>
-</div>
-
+<div class="text-card"><p><strong>Meine Familie.</strong></p>
+<p>Meine Familie ist sehr wichtig für mich.<br>Wir helfen einander jeden Tag.</p>
+<hr><p><strong>ترجمه:</strong><br>خانواده‌ام برای من بسیار مهم است.<br>ما هر روز به هم کمک می‌کنیم.</p></div>
 </details>
 
 </main>
 
-<footer>
-© 2026 Deutsch A1 Lernwebsite
-</footer>
+<footer>© 2026 Deutsch A1 Lernwebsite</footer>
 
 <script>
-function openMenu(){
-  document.getElementById("menu").style.left="0";
-  document.getElementById("overlay").style.display="block";
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
 }
 
-function closeMenu(){
-  document.getElementById("menu").style.left="-260px";
-  document.getElementById("overlay").style.display="none";
+function toggleMenuText(id){
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "block") ? "none" : "block";
 }
 </script>
 
