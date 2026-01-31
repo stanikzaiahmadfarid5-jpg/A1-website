@@ -239,13 +239,48 @@ footer{
 <details>
 <summary>Übungen – Sehr einfach</summary>
 
-<div class="exercise"><p><strong>1)</strong> Ich ___ Ahmad.<br>a) bist<br>b) bin ✅<br>c) hat</p></div>
-<div class="exercise"><p><strong>2)</strong> Ich ___ eine Familie.<br>a) habe ✅<br>b) hast<br>c) ist</p></div>
-<div class="exercise"><p><strong>3)</strong> Guten ___<br>a) Nacht ✅<br>b) Haus<br>c) Brot</p></div>
-<div class="exercise"><p><strong>4)</strong> Hallo = ?<br>a) خداحافظ<br>b) سلام ✅<br>c) تشکر</p></div>
-<div class="exercise"><p><strong>5)</strong> Ich ___ Deutsch.<br>a) lerne ✅<br>b) lernen<br>c) lernt</p></div>
+<div class="exercise">
+<p><strong>1)</strong> Ich ___ Ahmad.</p>
+<button onclick="check(this,false)">bist</button>
+<button onclick="check(this,true)">bin</button>
+<button onclick="check(this,false)">hat</button>
+<p class="result"></p>
+</div>
+
+<div class="exercise">
+<p><strong>2)</strong> Ich ___ eine Familie.</p>
+<button onclick="check(this,true)">habe</button>
+<button onclick="check(this,false)">hast</button>
+<button onclick="check(this,false)">ist</button>
+<p class="result"></p>
+</div>
+
+<div class="exercise">
+<p><strong>3)</strong> Guten ___</p>
+<button onclick="check(this,true)">Nacht</button>
+<button onclick="check(this,false)">Haus</button>
+<button onclick="check(this,false)">Brot</button>
+<p class="result"></p>
+</div>
+
+<div class="exercise">
+<p><strong>4)</strong> Hallo = ?</p>
+<button onclick="check(this,false)">خداحافظ</button>
+<button onclick="check(this,true)">سلام</button>
+<button onclick="check(this,false)">تشکر</button>
+<p class="result"></p>
+</div>
+
+<div class="exercise">
+<p><strong>5)</strong> Ich ___ Deutsch.</p>
+<button onclick="check(this,true)">lerne</button>
+<button onclick="check(this,false)">lernen</button>
+<button onclick="check(this,false)">lernt</button>
+<p class="result"></p>
+</div>
 
 </details>
+
 
 </main>
 
@@ -254,9 +289,19 @@ footer{
 </footer>
 
 <script>
-function openMenu(){document.getElementById("menu").classList.add("active")}
-function closeMenu(){document.getElementById("menu").classList.remove("active")}
+function check(btn, correct){
+  const box = btn.parentElement;
+  const res = box.querySelector(".result");
+  if(correct){
+    res.innerHTML = "✅ درست است";
+    res.style.color = "green";
+  }else{
+    res.innerHTML = "❌ اشتباه است";
+    res.style.color = "red";
+  }
+}
 </script>
+
 
 </body>
 </html>
