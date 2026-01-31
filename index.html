@@ -289,18 +289,15 @@ footer{
 </footer>
 
 <script>
-function check(btn, correct){
-  const box = btn.parentElement;
-  const res = box.querySelector(".result");
-  if(correct){
-    res.innerHTML = "✅ درست است";
-    res.style.color = "green";
-  }else{
-    res.innerHTML = "❌ اشتباه است";
-    res.style.color = "red";
-  }
+function openMenu(){
+  document.getElementById("menu").classList.add("active");
+}
+
+function closeMenu(){
+  document.getElementById("menu").classList.remove("active");
 }
 </script>
+
 
 
 </body>
