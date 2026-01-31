@@ -289,14 +289,15 @@ footer{
 </footer>
 
 <script>
-function openMenu(){
+document.querySelector(".menu-btn").onclick = function(){
   document.getElementById("menu").classList.add("active");
-}
+};
 
-function closeMenu(){
+document.querySelector(".close").onclick = function(){
   document.getElementById("menu").classList.remove("active");
-}
+};
 </script>
+
 
 
 
