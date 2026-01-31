@@ -15,71 +15,56 @@ body{
   color:#333;
 }
 
-/* ===== HEADER ===== */
+/* Header */
 header{
   background:#2f7d5a;
   color:white;
-  padding:18px;
+  padding:14px;
   text-align:center;
   position:relative;
 }
 
-/* ===== HAMBURGER ===== */
-.hamburger{
+/* Hamburger */
+.menu-btn{
   position:absolute;
-  left:16px;
-  top:18px;
+  left:15px;
+  top:15px;
   font-size:26px;
   cursor:pointer;
   user-select:none;
 }
 
-/* ===== MENU PANEL ===== */
-.menu-panel{
+/* Menu panel */
+.menu{
   position:fixed;
   top:0;
   left:-100%;
   width:80%;
   max-width:320px;
   height:100%;
-  background:#2f7d5a;
-  color:white;
+  background:#ffffff;
+  border-right:2px solid #dfeee7;
   padding:20px;
   transition:0.3s;
-  z-index:1000;
+  z-index:999;
+  overflow-y:auto;
 }
 
-.menu-panel.active{
-  left:0;
-}
+.menu.active{left:0}
 
-.menu-panel h2{
+.menu h3{
+  color:#2f7d5a;
   margin-top:0;
+}
+
+.menu .close{
   font-size:22px;
-  border-bottom:1px solid rgba(255,255,255,0.3);
-  padding-bottom:10px;
-}
-
-.menu-item{
-  margin-top:18px;
   cursor:pointer;
-  font-size:18px;
-  font-weight:bold;
+  margin-bottom:10px;
+  display:block;
 }
 
-.menu-content{
-  display:none;
-  margin-top:8px;
-  font-size:15px;
-  font-weight:normal;
-  line-height:1.5;
-  background:rgba(255,255,255,0.1);
-  padding:10px;
-  border-radius:8px;
-}
-
-/* ===== MAIN SITE ===== */
-
+/* Main */
 main{
   max-width:900px;
   margin:auto;
@@ -112,14 +97,8 @@ summary{
 
 summary::-webkit-details-marker{display:none}
 
-ul{
-  margin-top:14px;
-  padding-left:20px;
-}
-
-li{
-  margin-bottom:8px;
-}
+ul{margin-top:14px;padding-left:20px}
+li{margin-bottom:8px}
 
 .text-card{
   background:#f6fbf8;
@@ -129,10 +108,12 @@ li{
   border:1px solid #e0f0e8;
 }
 
-hr{
-  border:none;
-  border-top:1px solid #cfe3d9;
-  margin:12px 0;
+.exercise{
+  background:#f0faf5;
+  border:1px solid #cfe3d9;
+  border-radius:10px;
+  padding:14px;
+  margin-bottom:12px;
 }
 
 footer{
@@ -146,37 +127,24 @@ footer{
 
 <body>
 
-<!-- ===== MENU PANEL ===== -->
-<div class="menu-panel" id="menu">
-  <div style="display:flex;justify-content:space-between;align-items:center;">
-    <h2>Menü</h2>
-    <div style="font-size:22px;cursor:pointer;" onclick="closeMenu()">✖</div>
-  </div>
-
-  <div class="menu-item" onclick="toggleMenuText('u')">Über uns</div>
-  <div class="menu-content" id="u">
-    Diese Website hilft dir, Deutsch A1 einfach und Schritt für Schritt zu lernen.
-    Mit einfachen Wörtern, Grammatik und kurzen Texten.
-  </div>
-
-  <div class="menu-item" onclick="toggleMenuText('w')">Wie lernen</div>
-  <div class="menu-content" id="w">
-    Du lernst mit Kategorien, einfachen Erklärungen, Beispielen und kurzen Texten.
-    Alles ist klar, langsam und verständlich aufgebaut.
-  </div>
-
-  <div class="menu-item" onclick="toggleMenuText('f')">Für wen</div>
-  <div class="menu-content" id="f">
-    Für Anfänger (A1), für Migranten, für Schüler, für alle,
-    die Deutsch einfach und ohne Stress lernen möchten.
-  </div>
-</div>
-
-
 <header>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+<span class="menu-btn" onclick="openMenu()">☰</span>
 <h1>Deutsch A1 – Einfach Lernen</h1>
 </header>
+
+<!-- Menu -->
+<div class="menu" id="menu">
+<span class="close" onclick="closeMenu()">✖</span>
+
+<h3>Über uns</h3>
+<p>Diese Website hilft dir, Deutsch A1 einfach und Schritt für Schritt zu lernen.</p>
+
+<h3>Wie lernen wir?</h3>
+<p>Mit einfachen Wörtern, kurzen Texten, Grammatik und Übungen.</p>
+
+<h3>Für wen?</h3>
+<p>Für Anfänger, die Deutsch von null lernen möchten.</p>
+</div>
 
 <main>
 
@@ -184,16 +152,14 @@ footer{
 <p>Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</p>
 </div>
 
-<!-- ======== ALL CONTENT BELOW = UNCHANGED ======== -->
-
+<!-- همه دسته‌بندی‌ها + محتوا -->
 <!-- Begrüßung -->
 <details><summary>Begrüßung</summary><ul>
 <li>Hallo — سلام</li><li>Hi — سلام (غیررسمی)</li><li>Guten Morgen — صبح بخیر</li>
 <li>Guten Tag — روز بخیر</li><li>Guten Abend — عصر بخیر</li><li>Gute Nacht — شب بخیر</li>
 <li>Wie geht es dir? — حالت چطور است؟</li><li>Mir geht es gut — حالم خوب است</li>
-<li>Danke — تشکر</li><li>Vielen Dank — تشکر زیاد</li><li>Bitte — لطفاً / خواهش می‌کنم</li>
-<li>Entschuldigung — ببخشید</li><li>Tschüss — خداحافظ (غیررسمی)</li>
-<li>Auf Wiedersehen — خداحافظ (رسمی)</li>
+<li>Danke — تشکر</li><li>Vielen Dank — تشکر زیاد</li><li>Bitte — لطفاً</li>
+<li>Entschuldigung — ببخشید</li><li>Tschüss — خداحافظ</li><li>Auf Wiedersehen — خداحافظ</li>
 </ul></details>
 
 <!-- Familie -->
@@ -201,9 +167,8 @@ footer{
 <li>die Familie — خانواده</li><li>der Vater — پدر</li><li>die Mutter — مادر</li>
 <li>der Bruder — برادر</li><li>die Schwester — خواهر</li><li>der Sohn — پسر</li>
 <li>die Tochter — دختر</li><li>der Mann — شوهر</li><li>die Frau — زن</li>
-<li>die Eltern — والدین</li><li>die Kinder — کودکان</li>
-<li>der Großvater — پدربزرگ</li><li>die Großmutter — مادربزرگ</li>
-<li>verheiratet — متأهل</li><li>ledig — مجرد</li>
+<li>die Eltern — والدین</li><li>die Kinder — کودکان</li><li>der Großvater — پدربزرگ</li>
+<li>die Großmutter — مادربزرگ</li><li>verheiratet — متأهل</li><li>ledig — مجرد</li>
 </ul></details>
 
 <!-- Supermarkt -->
@@ -236,55 +201,61 @@ footer{
 
 <!-- Grammatik -->
 <details><summary>Grammatik</summary>
-<div class="text-card"><p><strong>sein (بودن)</strong></p><p>
-ich bin — من هستم<br>du bist — تو هستی<br>er ist — او هست (مذکر)<br>
-sie ist — او هست (مونث)<br>wir sind — ما هستیم<br>ihr seid — شما هستید</p></div>
+<div class="text-card"><p><strong>sein (بودن)</strong></p>
+<p>ich bin — من هستم<br>du bist — تو هستی<br>er ist — او هست<br>sie ist — او هست<br>wir sind — ما هستیم<br>ihr seid — شما هستید</p></div>
 
-<div class="text-card"><p><strong>haben (داشتن)</strong></p><p>
-ich habe — من دارم<br>du hast — تو داری<br>er hat — او دارد<br>
-sie hat — او دارد<br>wir haben — ما داریم<br>ihr habt — شما دارید</p></div>
+<div class="text-card"><p><strong>haben (داشتن)</strong></p>
+<p>ich habe — من دارم<br>du hast — تو داری<br>er hat — او دارد<br>sie hat — او دارد<br>wir haben — ما داریم<br>ihr habt — شما دارید</p></div>
 
 <div class="text-card"><p><strong>جمله ساده</strong></p>
-<p>Ich bin Ahmad.<br>من احمد هستم.</p>
-<p>Ich habe eine Familie.<br>من یک خانواده دارم.</p></div>
+<p>Ich bin Ahmad.<br>من احمد هستم.<br><br>Ich habe eine Familie.<br>من یک خانواده دارم.</p></div>
 
 <div class="text-card"><p><strong>سؤال ساده</strong></p>
-<p>Bist du Ahmad?<br>آیا تو احمد هستی؟</p>
-<p>Hast du eine Familie?<br>آیا تو یک خانواده داری؟</p></div>
+<p>Bist du Ahmad?<br>آیا تو احمد هستی؟<br><br>Hast du eine Familie?<br>آیا تو یک خانواده داری؟</p></div>
 </details>
 
 <!-- Kurze Texte -->
 <details><summary>Kurze Texte</summary>
-<div class="text-card"><p><strong>Ich lerne Deutsch.</strong></p>
+<div class="text-card">
+<p><strong>Ich lerne Deutsch.</strong></p>
 <p>Ich lerne Deutsch jeden Tag.<br>Deutsch ist wichtig für mein Leben.</p>
-<hr><p><strong>ترجمه:</strong><br>من هر روز آلمانی یاد می‌گیرم.<br>آلمانی برای زندگی من مهم است.</p></div>
+<p><strong>ترجمه:</strong><br>من هر روز آلمانی یاد می‌گیرم.<br>آلمانی برای زندگی من مهم است.</p>
+</div>
 
-<div class="text-card"><p><strong>Mein Alltag.</strong></p>
+<div class="text-card">
+<p><strong>Mein Alltag.</strong></p>
 <p>Ich stehe früh auf und trinke Tee.<br>Dann lerne ich Deutsch zu Hause.</p>
-<hr><p><strong>ترجمه:</strong><br>من زود بیدار می‌شوم و چای می‌نوشم.<br>بعد در خانه آلمانی یاد می‌گیرم.</p></div>
+<p><strong>ترجمه:</strong><br>من زود بیدار می‌شوم و چای می‌نوشم.<br>بعد در خانه آلمانی یاد می‌گیرم.</p>
+</div>
 
-<div class="text-card"><p><strong>Meine Familie.</strong></p>
+<div class="text-card">
+<p><strong>Meine Familie.</strong></p>
 <p>Meine Familie ist sehr wichtig für mich.<br>Wir helfen einander jeden Tag.</p>
-<hr><p><strong>ترجمه:</strong><br>خانواده‌ام برای من بسیار مهم است.<br>ما هر روز به هم کمک می‌کنیم.</p></div>
+<p><strong>ترجمه:</strong><br>خانواده‌ام برای من بسیار مهم است.<br>ما هر روز به هم کمک می‌کنیم.</p>
+</div>
+</details>
+
+<!-- Übungen -->
+<details>
+<summary>Übungen – Sehr einfach</summary>
+
+<div class="exercise"><p><strong>1)</strong> Ich ___ Ahmad.<br>a) bist<br>b) bin ✅<br>c) hat</p></div>
+<div class="exercise"><p><strong>2)</strong> Ich ___ eine Familie.<br>a) habe ✅<br>b) hast<br>c) ist</p></div>
+<div class="exercise"><p><strong>3)</strong> Guten ___<br>a) Nacht ✅<br>b) Haus<br>c) Brot</p></div>
+<div class="exercise"><p><strong>4)</strong> Hallo = ?<br>a) خداحافظ<br>b) سلام ✅<br>c) تشکر</p></div>
+<div class="exercise"><p><strong>5)</strong> Ich ___ Deutsch.<br>a) lerne ✅<br>b) lernen<br>c) lernt</p></div>
+
 </details>
 
 </main>
 
-<footer>© 2026 Deutsch A1 Lernwebsite</footer>
+<footer>
+© 2026 Deutsch A1 Lernwebsite
+</footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
-
-function closeMenu(){
-  document.getElementById("menu").classList.remove("active");
-}
-
-function toggleMenuText(id){
-  const el = document.getElementById(id);
-  el.style.display = (el.style.display === "block") ? "none" : "block";
-}
+function openMenu(){document.getElementById("menu").classList.add("active")}
+function closeMenu(){document.getElementById("menu").classList.remove("active")}
 </script>
 
 </body>
