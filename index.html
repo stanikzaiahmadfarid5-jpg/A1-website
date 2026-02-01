@@ -285,20 +285,35 @@ footer{
 </footer>
 
 <script>
+/* ===== Menu system ===== */
+document.querySelector(".menu-btn").onclick = function(){
+  document.getElementById("menu").classList.add("active");
+};
+
+document.querySelector(".close").onclick = function(){
+  document.getElementById("menu").classList.remove("active");
+};
+
+/* ===== Exercise system ===== */
 document.querySelectorAll(".opt").forEach(function(opt){
   opt.onclick = function(){
     if(this.getAttribute("data-correct") === "true"){
       this.style.background = "#c8f7d5";
       this.style.border = "1px solid green";
-      this.innerHTML = this.innerHTML + " ✅ درست";
+      if(!this.innerHTML.includes("درست")){
+        this.innerHTML = this.innerHTML + " ✅ درست";
+      }
     }else{
       this.style.background = "#ffd6d6";
       this.style.border = "1px solid red";
-      this.innerHTML = this.innerHTML + " ❌ غلط";
+      if(!this.innerHTML.includes("غلط")){
+        this.innerHTML = this.innerHTML + " ❌ غلط";
+      }
     }
   };
 });
 </script>
+
 
 
 
