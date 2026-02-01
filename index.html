@@ -240,39 +240,44 @@ footer{
 <details>
 <summary>Übungen – Sehr einfach</summary>
 
-<div class="exercise">
+<div class="exercise" data-answer="b">
 <p><strong>1)</strong> Ich ___ Ahmad.</p>
-<p class="opt" data-correct="false">a) bist</p>
-<p class="opt" data-correct="true">b) bin</p>
-<p class="opt" data-correct="false">c) hat</p>
+<button>a) bist</button>
+<button>b) bin</button>
+<button>c) hat</button>
 </div>
 
-<div class="exercise">
+<div class="exercise" data-answer="a">
 <p><strong>2)</strong> Ich ___ eine Familie.</p>
-<p class="opt" data-correct="true">a) habe</p>
-<p class="opt" data-correct="false">b) hast</p>
-<p class="opt" data-correct="false">c) ist</p>
+<button>a) habe</button>
+<button>b) hast</button>
+<button>c) ist</button>
 </div>
 
-<div class="exercise">
+<div class="exercise" data-answer="a">
 <p><strong>3)</strong> Guten ___</p>
-<p class="opt" data-correct="true">a) Nacht</p>
-<p class="opt" data-correct="false">b) Haus</p>
-<p class="opt" data-correct="false">c) Brot</p>
+<button>a) Nacht</button>
+<button>b) Haus</button>
+<button>c) Brot</button>
 </div>
 
-<div class="exercise">
+<div class="exercise" data-answer="b">
 <p><strong>4)</strong> Hallo = ?</p>
-<p class="opt" data-correct="false">a) خداحافظ</p>
-<p class="opt" data-correct="true">b) سلام</p>
-<p class="opt" data-correct="false">c) تشکر</p>
+<button>a) خداحافظ</button>
+<button>b) سلام</button>
+<button>c) تشکر</button>
+</div>
+
+<div class="exercise" data-answer="a">
+<p><strong>5)</strong> Ich ___ Deutsch.</p>
+<button>a) lerne</button>
+<button>b) lernen</button>
+<button>c) lernt</button>
 </div>
 
 <div class="exercise">
-<p><strong>5)</strong> Ich ___ Deutsch.</p>
-<p class="opt" data-correct="true">a) lerne</p>
-<p class="opt" data-correct="false">b) lernen</p>
-<p class="opt" data-correct="false">c) lernt</p>
+<button id="showScore">نمایش نمره</button>
+<p id="scoreResult"></p>
 </div>
 
 </details>
@@ -285,33 +290,42 @@ footer{
 </footer>
 
 <script>
-/* ===== Menu system ===== */
+// menu
 document.querySelector(".menu-btn").onclick = function(){
   document.getElementById("menu").classList.add("active");
 };
-
 document.querySelector(".close").onclick = function(){
   document.getElementById("menu").classList.remove("active");
 };
 
-/* ===== Exercise system ===== */
-document.querySelectorAll(".opt").forEach(function(opt){
-  opt.onclick = function(){
-    if(this.getAttribute("data-correct") === "true"){
-      this.style.background = "#c8f7d5";
-      this.style.border = "1px solid green";
-      if(!this.innerHTML.includes("درست")){
-        this.innerHTML = this.innerHTML + " ✅ درست";
+// exercises
+let score = 0;
+let answered = 0;
+
+document.querySelectorAll(".exercise").forEach(ex => {
+  const correct = ex.getAttribute("data-answer");
+  const buttons = ex.querySelectorAll("button");
+
+  buttons.forEach(btn=>{
+    btn.onclick = function(){
+      if(btn.classList.contains("done")) return;
+
+      answered++;
+      if(btn.innerText.trim().startsWith(correct)){
+        btn.style.background = "#9be7c4";
+        score++;
+      }else{
+        btn.style.background = "#f7a8a8";
       }
-    }else{
-      this.style.background = "#ffd6d6";
-      this.style.border = "1px solid red";
-      if(!this.innerHTML.includes("غلط")){
-        this.innerHTML = this.innerHTML + " ❌ غلط";
-      }
+      btn.classList.add("done");
     }
-  };
+  });
 });
+
+document.getElementById("showScore").onclick = function(){
+  document.getElementById("scoreResult").innerText =
+  "نمره تو: " + score + " از 5";
+};
 </script>
 
 
