@@ -235,48 +235,44 @@ footer{
 </div>
 </details>
 
+
 <!-- Übungen -->
 <details>
 <summary>Übungen – Sehr einfach</summary>
 
 <div class="exercise">
 <p><strong>1)</strong> Ich ___ Ahmad.</p>
-<button onclick="check(this,false)">bist</button>
-<button onclick="check(this,true)">bin</button>
-<button onclick="check(this,false)">hat</button>
-<p class="result"></p>
+<p class="opt" data-correct="false">a) bist</p>
+<p class="opt" data-correct="true">b) bin</p>
+<p class="opt" data-correct="false">c) hat</p>
 </div>
 
 <div class="exercise">
 <p><strong>2)</strong> Ich ___ eine Familie.</p>
-<button onclick="check(this,true)">habe</button>
-<button onclick="check(this,false)">hast</button>
-<button onclick="check(this,false)">ist</button>
-<p class="result"></p>
+<p class="opt" data-correct="true">a) habe</p>
+<p class="opt" data-correct="false">b) hast</p>
+<p class="opt" data-correct="false">c) ist</p>
 </div>
 
 <div class="exercise">
 <p><strong>3)</strong> Guten ___</p>
-<button onclick="check(this,true)">Nacht</button>
-<button onclick="check(this,false)">Haus</button>
-<button onclick="check(this,false)">Brot</button>
-<p class="result"></p>
+<p class="opt" data-correct="true">a) Nacht</p>
+<p class="opt" data-correct="false">b) Haus</p>
+<p class="opt" data-correct="false">c) Brot</p>
 </div>
 
 <div class="exercise">
 <p><strong>4)</strong> Hallo = ?</p>
-<button onclick="check(this,false)">خداحافظ</button>
-<button onclick="check(this,true)">سلام</button>
-<button onclick="check(this,false)">تشکر</button>
-<p class="result"></p>
+<p class="opt" data-correct="false">a) خداحافظ</p>
+<p class="opt" data-correct="true">b) سلام</p>
+<p class="opt" data-correct="false">c) تشکر</p>
 </div>
 
 <div class="exercise">
 <p><strong>5)</strong> Ich ___ Deutsch.</p>
-<button onclick="check(this,true)">lerne</button>
-<button onclick="check(this,false)">lernen</button>
-<button onclick="check(this,false)">lernt</button>
-<p class="result"></p>
+<p class="opt" data-correct="true">a) lerne</p>
+<p class="opt" data-correct="false">b) lernen</p>
+<p class="opt" data-correct="false">c) lernt</p>
 </div>
 
 </details>
@@ -289,14 +285,21 @@ footer{
 </footer>
 
 <script>
-document.querySelector(".menu-btn").onclick = function(){
-  document.getElementById("menu").classList.add("active");
-};
-
-document.querySelector(".close").onclick = function(){
-  document.getElementById("menu").classList.remove("active");
-};
+document.querySelectorAll(".opt").forEach(function(opt){
+  opt.onclick = function(){
+    if(this.getAttribute("data-correct") === "true"){
+      this.style.background = "#c8f7d5";
+      this.style.border = "1px solid green";
+      this.innerHTML = this.innerHTML + " ✅ درست";
+    }else{
+      this.style.background = "#ffd6d6";
+      this.style.border = "1px solid red";
+      this.innerHTML = this.innerHTML + " ❌ غلط";
+    }
+  };
+});
 </script>
+
 
 
 
