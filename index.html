@@ -291,45 +291,34 @@ footer{
 <footer>
 © 2026 Deutsch A1 Lernwebsite
 </footer>
-
 <script>
-// menu
-document.querySelector(".menu-btn").onclick = function(){
-  document.getElementById("menu").classList.add("active");
-};
-document.querySelector(".close").onclick = function(){
-  document.getElementById("menu").classList.remove("active");
-};
-
-// exercises
 let score = 0;
-let answered = 0;
+let total = 0;
 
 document.querySelectorAll(".exercise").forEach(ex => {
-  const correct = ex.getAttribute("data-answer");
-  const buttons = ex.querySelectorAll("button");
+  total++;
 
-  buttons.forEach(btn=>{
-    btn.onclick = function(){
-      if(btn.classList.contains("done")) return;
+  ex.querySelectorAll("span").forEach(opt => {
+    opt.onclick = function(){
+      if(ex.classList.contains("done")) return;
 
-      answered++;
-      if(btn.innerText.trim().startsWith(correct)){
-        btn.style.background = "#9be7c4";
+      ex.classList.add("done");
+
+      if(this.classList.contains("correct")){
+        this.style.background = "#c8f7d1";
         score++;
       }else{
-        btn.style.background = "#f7a8a8";
+        this.style.background = "#f7c8c8";
+        ex.querySelector(".correct").style.background = "#c8f7d1";
       }
-      btn.classList.add("done");
-    }
+
+      document.getElementById("scoreBox").innerText =
+        "نمره: " + score + " / " + total;
+    };
   });
 });
-
-document.getElementById("showScore").onclick = function(){
-  document.getElementById("scoreResult").innerText =
-  "نمره تو: " + score + " از 5";
-};
 </script>
+
 
 </details>
 
