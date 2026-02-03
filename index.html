@@ -291,31 +291,68 @@ footer{
 <footer>
 © 2026 Deutsch A1 Lernwebsite
 </footer>
+
 <script>
-let score = 0;
-let total = 0;
+/* ===== MENU ===== */
+document.addEventListener("DOMContentLoaded", function(){
 
-document.querySelectorAll(".exercise").forEach(ex => {
-  total++;
+  const menuBtn = document.querySelector(".menu-btn");
+  const closeBtn = document.querySelector(".close");
+  const menu = document.getElementById("menu");
 
-  ex.querySelectorAll("span").forEach(opt => {
-    opt.onclick = function(){
-      if(ex.classList.contains("done")) return;
-
-      ex.classList.add("done");
-
-      if(this.classList.contains("correct")){
-        this.style.background = "#c8f7d1";
-        score++;
-      }else{
-        this.style.background = "#f7c8c8";
-        ex.querySelector(".correct").style.background = "#c8f7d1";
-      }
-
-      document.getElementById("scoreBox").innerText =
-        "نمره: " + score + " / " + total;
+  if(menuBtn){
+    menuBtn.onclick = function(){
+      menu.classList.add("active");
     };
+  }
+
+  if(closeBtn){
+    closeBtn.onclick = function(){
+      menu.classList.remove("active");
+    };
+  }
+
+  /* ===== EXERCISES + SCORE ===== */
+
+  let score = 0;
+  let total = 0;
+
+  const exercises = document.querySelectorAll(".exercise");
+
+  exercises.forEach((ex,index)=>{
+    total++;
+    const correct = ex.getAttribute("data-answer");
+    const buttons = ex.querySelectorAll("button");
+
+    buttons.forEach(btn=>{
+      btn.onclick = function(){
+
+        if(ex.classList.contains("answered")) return;
+
+        ex.classList.add("answered");
+
+        if(btn.innerText.trim().startsWith(correct)){
+          btn.style.background = "#9be7c4"; // سبز
+          score++;
+        }else{
+          btn.style.background = "#f7a8a8"; // سرخ
+        }
+
+        // غیر فعال کردن بقیه گزینه‌ها
+        buttons.forEach(b=>{
+          b.disabled = true;
+        });
+
+        // نمایش نمره
+        const scoreBox = document.getElementById("scoreBox");
+        if(scoreBox){
+          scoreBox.innerText = "نمره: " + score + " / " + total;
+        }
+
+      };
+    });
   });
+
 });
 </script>
 
