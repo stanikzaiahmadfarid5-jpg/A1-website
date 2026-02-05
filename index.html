@@ -547,44 +547,56 @@ alert('نمره تو: ' + score + ' از ' + total);
 </footer>
 
 <script>
-document.querySelector(".menu-btn").onclick = function(){
-  document.getElementById("menu").classList.add("active");
-};
-document.querySelector(".close").onclick = function(){
-  document.getElementById("menu").classList.remove("active");
-};
+document.addEventListener("DOMContentLoaded", function () {
 
-let totalScore = 0;
-let totalAnswered = 0;
+  let correct = 0;
+  let total = 0;
 
-document.querySelectorAll(".exercise").forEach(ex => {
-  const correct = ex.getAttribute("data-answer");
-  const buttons = ex.querySelectorAll("button");
+  const scoreBox = document.getElementById("scoreBox");
+  const exercises = document.querySelectorAll(".exercise");
 
-  buttons.forEach(btn=>{
-    btn.onclick = function(){
+  total = exercises.length;
+  updateScore();
 
-      if(ex.classList.contains("answered")) return;
+  exercises.forEach(ex => {
+    const correctAnswer = ex.getAttribute("data-answer");
+    const buttons = ex.querySelectorAll("button");
 
-      ex.classList.add("answered");
-      totalAnswered++;
+    buttons.forEach(btn => {
+      btn.addEventListener("click", function () {
 
-      if(btn.innerText.trim().startsWith(correct)){
-        btn.style.background = "#9be7c4";
-        totalScore++;
-      }else{
-        btn.style.background = "#f7a8a8";
-      }
+        // جلوگیری از کلیک دوباره
+        if (ex.classList.contains("answered")) return;
+        ex.classList.add("answered");
 
-      buttons.forEach(b=>{
-        b.disabled = true;
-        b.style.opacity = "0.6";
+        const chosen = btn.innerText.trim().charAt(0); // a یا b یا c
+
+        if (chosen === correctAnswer) {
+          btn.style.background = "#4CAF50"; // سبز
+          btn.style.color = "white";
+          correct++;
+        } else {
+          btn.style.background = "#f44336"; // سرخ
+          btn.style.color = "white";
+
+          // نشان دادن جواب درست
+          buttons.forEach(b => {
+            if (b.innerText.trim().charAt(0) === correctAnswer) {
+              b.style.background = "#4CAF50";
+              b.style.color = "white";
+            }
+          });
+        }
+
+        updateScore();
       });
-
-      document.getElementById("scoreBox").innerText =
-        "نمره: " + totalScore + " / " + totalAnswered;
-    }
+    });
   });
+
+  function updateScore() {
+    scoreBox.innerText = "نمره: " + correct + " / " + total;
+  }
+
 });
 </script>
 
