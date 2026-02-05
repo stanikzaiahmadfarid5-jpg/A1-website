@@ -346,15 +346,89 @@ c) من کار می‌کنم
 </details>
 
 
-<!-- Supermarkt -->
-<details><summary>Supermarkt</summary><ul>
-<li>der Supermarkt — سوپرمارکت</li><li>das Brot — نان</li><li>die Milch — شیر</li>
-<li>das Wasser — آب</li><li>der Reis — برنج</li><li>das Fleisch — گوشت</li>
-<li>das Gemüse — سبزیجات</li><li>das Obst — میوه</li><li>der Apfel — سیب</li>
-<li>die Banane — موز</li><li>der Preis — قیمت</li><li>billig — ارزان</li>
-<li>teuer — گران</li><li>kaufen — خریدن</li><li>bezahlen — پرداخت کردن</li>
-</ul></details>
+<section id="supermarkt" class="category-section">
+<button>A) Zucker</button>
+<button>B) Reis</button>
+<button>C) Öl</button>
+</div>
 
+
+<div class="exercise" data-answer="Apfel">
+<p>4) Apfel یعنی؟</p>
+<button>A) موز</button>
+<button>B) سیب</button>
+<button>C) تخم‌مرغ</button>
+</div>
+
+
+<div class="exercise" data-answer="Fleisch">
+<p>5) Fleisch یعنی؟</p>
+<button>A) گوشت</button>
+<button>B) مرغ</button>
+<button>C) نمک</button>
+</div>
+
+
+<div id="scoreBox" style="margin-top:15px;font-size:18px;font-weight:bold;">نمره: 0 / 5</div>
+<button id="showScore">نمایش نمره</button>
+
+
+</section>
+
+
+<!-- ================= CSS ================= -->
+<style>
+.category-section{padding:20px;border-top:2px solid #ddd;margin-top:30px}
+.words li{margin:5px 0}
+.exercise{margin:15px 0;padding:10px;border:1px solid #ccc;border-radius:8px}
+.exercise button{display:block;margin:5px 0;padding:8px;border-radius:6px;border:1px solid #aaa;cursor:pointer}
+</style>
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+let score = 0;
+let answered = 0;
+const total = document.querySelectorAll('#supermarkt .exercise').length;
+
+
+function updateScore(){
+document.getElementById('scoreBox').innerText = 'نمره: ' + score + ' / ' + total;
+}
+
+
+
+
+document.querySelectorAll('#supermarkt .exercise').forEach(ex => {
+const correct = ex.getAttribute('data-answer');
+const buttons = ex.querySelectorAll('button');
+
+
+buttons.forEach(btn=>{
+btn.onclick = function(){
+if(btn.classList.contains('done')) return;
+
+
+if(btn.innerText.includes(correct)){
+btn.style.background = '#9be7c4';
+score++;
+}else{
+btn.style.background = '#f7a8a8';
+}
+btn.classList.add('done');
+answered++;
+updateScore();
+}
+});
+});
+
+
+
+
+document.getElementById('showScore').onclick = function(){
+alert('نمره تو: ' + score + ' از ' + total);
+};
+</script>
 <!-- Alltag -->
 <details><summary>Alltag</summary><ul>
 <li>aufstehen — بیدار شدن</li><li>früh aufstehen — زود بیدار شدن</li>
