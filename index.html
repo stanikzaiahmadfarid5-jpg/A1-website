@@ -209,6 +209,10 @@ Auf Wiedersehen!
 </div>
 
 <!-- تمرین‌ها -->
+  <div id="scoreBox" style="font-size:18px;font-weight:bold;margin:10px 0;">
+نمره: 0 / 0
+</div>
+
 <div class="exercise" data-answer="b">
 <p><strong>1)</strong> Guten ___<br></p>
 <button>a) Haus</button>
@@ -543,66 +547,44 @@ alert('نمره تو: ' + score + ' از ' + total);
 </footer>
 
 <script>
-/* ===== MENU ===== */
-document.addEventListener("DOMContentLoaded", function(){
+document.querySelector(".menu-btn").onclick = function(){
+  document.getElementById("menu").classList.add("active");
+};
+document.querySelector(".close").onclick = function(){
+  document.getElementById("menu").classList.remove("active");
+};
 
-  const menuBtn = document.querySelector(".menu-btn");
-  const closeBtn = document.querySelector(".close");
-  const menu = document.getElementById("menu");
+let totalScore = 0;
+let totalAnswered = 0;
 
-  if(menuBtn){
-    menuBtn.onclick = function(){
-      menu.classList.add("active");
-    };
-  }
+document.querySelectorAll(".exercise").forEach(ex => {
+  const correct = ex.getAttribute("data-answer");
+  const buttons = ex.querySelectorAll("button");
 
-  if(closeBtn){
-    closeBtn.onclick = function(){
-      menu.classList.remove("active");
-    };
-  }
+  buttons.forEach(btn=>{
+    btn.onclick = function(){
 
-  /* ===== EXERCISES + SCORE ===== */
+      if(ex.classList.contains("answered")) return;
 
-  let score = 0;
-  let total = 0;
+      ex.classList.add("answered");
+      totalAnswered++;
 
-  const exercises = document.querySelectorAll(".exercise");
+      if(btn.innerText.trim().startsWith(correct)){
+        btn.style.background = "#9be7c4";
+        totalScore++;
+      }else{
+        btn.style.background = "#f7a8a8";
+      }
 
-  exercises.forEach((ex,index)=>{
-    total++;
-    const correct = ex.getAttribute("data-answer");
-    const buttons = ex.querySelectorAll("button");
+      buttons.forEach(b=>{
+        b.disabled = true;
+        b.style.opacity = "0.6";
+      });
 
-    buttons.forEach(btn=>{
-      btn.onclick = function(){
-
-        if(ex.classList.contains("answered")) return;
-
-        ex.classList.add("answered");
-
-        if(btn.innerText.trim().startsWith(correct)){
-          btn.style.background = "#9be7c4"; // سبز
-          score++;
-        }else{
-          btn.style.background = "#f7a8a8"; // سرخ
-        }
-
-        // غیر فعال کردن بقیه گزینه‌ها
-        buttons.forEach(b=>{
-          b.disabled = true;
-        });
-
-        // نمایش نمره
-        const scoreBox = document.getElementById("scoreBox");
-        if(scoreBox){
-          scoreBox.innerText = "نمره: " + score + " / " + total;
-        }
-
-      };
-    });
+      document.getElementById("scoreBox").innerText =
+        "نمره: " + totalScore + " / " + totalAnswered;
+    }
   });
-
 });
 </script>
 
