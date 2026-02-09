@@ -7,620 +7,166 @@
 
 <style>
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  background:#f3f7f5;
-  color:#333;
+  background:#0f172a;
+  color:#e5e7eb;
 }
-
-/* Header */
 header{
-  background:#2f7d5a;
+  background:#020617;
   color:white;
-  padding:14px;
+  padding:16px;
   text-align:center;
-  position:relative;
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
 }
-
-/* Hamburger */
 .menu-btn{
   position:absolute;
-  left:15px;
-  top:15px;
-  font-size:26px;
+  left:15px;top:15px;
+  font-size:28px;
   cursor:pointer;
-  user-select:none;
 }
-
-/* Menu panel */
 .menu{
   position:fixed;
-  top:0;
-  left:-100%;
-  width:80%;
-  max-width:320px;
-  height:100%;
-  background:#ffffff;
-  border-right:2px solid #dfeee7;
+  top:0;left:-100%;
+  width:260px;height:100%;
+  background:#020617;
   padding:20px;
   transition:0.3s;
-  z-index:999;
-  overflow-y:auto;
+  z-index:2000;
 }
-
 .menu.active{left:0}
-
-.menu h3{
-  color:#2f7d5a;
-  margin-top:0;
-}
-
-.menu .close{
-  font-size:22px;
-  cursor:pointer;
-  margin-bottom:10px;
+.menu a{
   display:block;
+  color:#e5e7eb;
+  text-decoration:none;
+  padding:12px;
+  border-radius:8px;
+  margin-bottom:6px;
 }
-
-/* Main */
-main{
-  max-width:900px;
-  margin:auto;
-  padding:16px;
-}
-
-.section{
-  background:#ffffff;
+.menu a:hover{background:#1e293b}
+main{padding-top:90px;max-width:1000px;margin:auto}
+.page{display:none;padding:20px}
+.page.active{display:block}
+.card{
+  background:#020617;
   border-radius:14px;
-  padding:18px;
+  padding:16px;
   margin-bottom:16px;
-  border:1px solid #dfeee7;
+  border:1px solid #1e293b;
 }
-
-details{
-  background:#ffffff;
-  border-radius:14px;
-  padding:16px;
-  margin-bottom:14px;
-  border:1px solid #dfeee7;
-}
-
-summary{
-  font-size:20px;
-  font-weight:bold;
-  color:#2f7d5a;
-  cursor:pointer;
-  list-style:none;
-}
-
-summary::-webkit-details-marker{display:none}
-
-ul{margin-top:14px;padding-left:20px}
-li{margin-bottom:8px}
-
-.text-card{
-  background:#f6fbf8;
-  border-radius:10px;
-  padding:14px;
-  margin-bottom:14px;
-  border:1px solid #e0f0e8;
-}
-
-.exercise{
-  background:#f0faf5;
-  border:1px solid #cfe3d9;
-  border-radius:10px;
-  padding:14px;
-  margin-bottom:12px;
-}
-
-footer{
-  text-align:center;
-  font-size:14px;
-  color:#555;
-  padding:16px;
-}
+.exercise{border:1px solid #334155;border-radius:10px;padding:12px;margin:10px 0}
+.exercise button{display:block;width:100%;margin:6px 0;padding:10px;border-radius:8px;border:none;background:#1e293b;color:white;cursor:pointer}
+.exercise button:hover{background:#334155}
+#scoreBox{font-size:18px;font-weight:bold;margin:15px 0}
+footer{text-align:center;padding:20px;color:#94a3b8}
 </style>
 </head>
-
 <body>
-
 <header>
-<span class="menu-btn" onclick="openMenu()">☰</span>
+<span class="menu-btn" id="menuBtn">☰</span>
 <h1>Deutsch A1 – Einfach Lernen</h1>
 </header>
 
-<!-- Menu -->
 <div class="menu" id="menu">
-<span class="close" onclick="closeMenu()">✖</span>
-
-<h3>Über uns</h3>
-<p>Diese Website hilft dir, Deutsch A1 einfach und Schritt für Schritt zu lernen.</p>
-
-<h3>Wie lernen wir?</h3>
-<p>Mit einfachen Wörtern, kurzen Texten, Grammatik und Übungen.</p>
-
-<h3>Für wen?</h3>
-<p>Für Anfänger, die Deutsch von null lernen möchten.</p>
+<a href="#" data-page="home">🏠 Start</a>
+<a href="#" data-page="begrussung">👋 Begrüßung</a>
+<a href="#" data-page="familie">👨‍👩‍👧 Familie</a>
+<a href="#" data-page="supermarkt">🛒 Supermarkt</a>
+<a href="#" data-page="alltag">📅 Alltag</a>
+<a href="#" data-page="haus">🏠 Haus</a>
+<a href="#" data-page="grammatik">📘 Grammatik</a>
+<a href="#" data-page="texte">📖 Texte</a>
+<a href="#" data-page="uebungen">📝 Übungen</a>
 </div>
 
 <main>
 
-<div class="section">
-<p>Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</p>
-</div>
-
-<!-- همه دسته‌بندی‌ها + محتوا -->
-<!-- Begrüßung -->
-<details>
-<summary>Begrüßung (احوال‌پرسی)</summary>
-
-<!-- لغات -->
-<ul>
-<li>Hallo — سلام</li>
-<li>Hi — سلام (غیررسمی)</li>
-<li>Guten Morgen — صبح بخیر</li>
-<li>Guten Tag — روز بخیر</li>
-<li>Guten Abend — عصر بخیر</li>
-<li>Gute Nacht — شب بخیر</li>
-<li>Wie geht es dir? — حالت چطور است؟</li>
-<li>Mir geht es gut — حالم خوب است</li>
-<li>Danke — تشکر</li>
-<li>Vielen Dank — تشکر زیاد</li>
-<li>Bitte — لطفاً</li>
-<li>Entschuldigung — ببخشید</li>
-<li>Tschüss — خداحافظ</li>
-<li>Auf Wiedersehen — خداحافظ</li>
-</ul>
-
-<!-- جملات ساده -->
-<div class="text-card">
-<p><strong>Sätze (جملات ساده):</strong></p>
-<p>
-Hallo, wie geht es dir?<br>
-سلام، حالت چطور است؟<br><br>
-
-Mir geht es gut, danke.<br>
-حالم خوب است، تشکر.<br><br>
-
-Guten Morgen, Ahmad.<br>
-صبح بخیر احمد.
-</p>
-</div>
-
-<!-- متن کوتاه -->
-<div class="text-card">
-<p><strong>Kurzer Text (متن کوتاه):</strong></p>
-<p>
-Hallo! Ich heiße Ahmad.<br>
-Guten Morgen! Wie geht es dir?<br>
-Mir geht es gut, danke.<br>
-Auf Wiedersehen!
-</p>
-
-<p><strong>ترجمه:</strong><br>
-سلام! نام من احمد است.<br>
-صبح بخیر! حالت چطور است؟<br>
-حالم خوب است، تشکر.<br>
-خداحافظ!
-</p>
-</div>
-
-<!-- تمرین‌ها -->
-  <div id="scoreBox" style="font-size:18px;font-weight:bold;margin:10px 0;">
-نمره: 0 / 0
-</div>
-
-<div class="exercise" data-answer="b">
-<p><strong>1)</strong> Guten ___<br></p>
-<button>a) Haus</button>
-<button>b) Morgen</button>
-<button>c) Brot</button>
-</div>
-
-<div class="exercise" data-answer="a">
-<p><strong>2)</strong> Hallo یعنی ؟<br></p>
-<button>a) سلام</button>
-<button>b) خداحافظ</button>
-<button>c) تشکر</button>
-</div>
-
-<div class="exercise" data-answer="c">
-<p><strong>3)</strong> Wie geht es dir? یعنی ؟<br></p>
-<button>a) نامت چیست؟</button>
-<button>b) کجا می‌روی؟</button>
-<button>c) حالت چطور است؟</button>
-</div>
-
-<div class="exercise" data-answer="b">
-<p><strong>4)</strong> Mir geht es ___<br></p>
-<button>a) schlecht</button>
-<button>b) gut</button>
-<button>c) Haus</button>
-</div>
-
-<div class="exercise" data-answer="a">
-<p><strong>5)</strong> Tschüss یعنی ؟<br></p>
-<button>a) خداحافظ</button>
-<button>b) سلام</button>
-<button>c) لطفاً</button>
-</div>
-
-</details>
-
-
-<!-- Familie -->
-<details><summary>Familie (خانواده)</summary>
-
-<div class="text-card">
-<p><strong>لغات خانواده</strong></p>
-<ul>
-<li>die Familie — خانواده</li>
-<li>der Vater — پدر</li>
-<li>die Mutter — مادر</li>
-<li>der Bruder — برادر</li>
-<li>die Schwester — خواهر</li>
-<li>der Sohn — پسر</li>
-<li>die Tochter — دختر</li>
-<li>der Mann — شوهر</li>
-<li>die Frau — زن</li>
-<li>die Eltern — والدین</li>
-<li>die Kinder — کودکان</li>
-<li>der Großvater — پدربزرگ</li>
-<li>die Großmutter — مادربزرگ</li>
-<li>der Onkel — کاکا / عمو</li>
-<li>die Tante — عمه / خاله</li>
-<li>der Cousin — پسر کاکا/عمو</li>
-<li>die Cousine — دختر کاکا/عمو</li>
-<li>verheiratet — متأهل</li>
-<li>ledig — مجرد</li>
-<li>geschieden — طلاق گرفته</li>
-</ul>
-</div>
-
-<div class="text-card">
-<p><strong>جملات ساده</strong></p>
-<p>
-Ich habe eine Familie.<br>
-من یک خانواده دارم.<br><br>
-
-Mein Vater heißt Ali.<br>
-نام پدرم علی است.<br><br>
-
-Meine Mutter ist zu Hause.<br>
-مادرم در خانه است.<br><br>
-
-Ich habe zwei Brüder.<br>
-من دو برادر دارم.<br><br>
-
-Ich bin verheiratet.<br>
-من متأهل هستم.
-</p>
-</div>
-
-<div class="text-card">
-<p><strong>متن کوتاه</strong></p>
-<p>
-Meine Familie ist sehr wichtig für mich.<br>
-Ich habe einen Vater, eine Mutter und zwei Geschwister.<br>
-Wir leben zusammen und helfen einander.
-</p>
-
-<p><strong>ترجمه:</strong><br>
-خانواده‌ام برای من بسیار مهم است.<br>
-من یک پدر، یک مادر و دو خواهر/برادر دارم.<br>
-ما با هم زندگی می‌کنیم و به هم کمک می‌کنیم.
-</p>
-</div>
-
-<div class="exercise">
-<p><strong>تمرین 1:</strong> Ich ___ eine Familie.<br>
-a) bin<br>
-b) habe ✅<br>
-c) ist
-</p>
-</div>
-
-<div class="exercise">
-<p><strong>تمرین 2:</strong> der Vater = ؟<br>
-a) مادر<br>
-b) پدر ✅<br>
-c) برادر
-</p>
-</div>
-
-<div class="exercise">
-<p><strong>تمرین 3:</strong> Meine Mutter ist ___ Hause.<br>
-a) zu ✅<br>
-b) im<br>
-c) am
-</p>
-</div>
-
-<div class="exercise">
-<p><strong>تمرین 4:</strong> Ich bin verheiratet = ؟<br>
-a) من مجرد هستم<br>
-b) من متأهل هستم ✅<br>
-c) من کار می‌کنم
-</p>
-</div>
-
-</details>
-
-
-<section id="supermarkt" class="category-section">
-<button>A) Zucker</button>
-<button>B) Reis</button>
-<button>C) Öl</button>
-</div>
-
-
-<div class="exercise" data-answer="Apfel">
-<p>4) Apfel یعنی؟</p>
-<button>A) موز</button>
-<button>B) سیب</button>
-<button>C) تخم‌مرغ</button>
-</div>
-
-
-<div class="exercise" data-answer="Fleisch">
-<p>5) Fleisch یعنی؟</p>
-<button>A) گوشت</button>
-<button>B) مرغ</button>
-<button>C) نمک</button>
-</div>
-
-
-<div id="scoreBox" style="margin-top:15px;font-size:18px;font-weight:bold;">نمره: 0 / 5</div>
-<button id="showScore">نمایش نمره</button>
-
-
+<section id="home" class="page active">
+<div class="card">Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</div>
 </section>
 
+<section id="begrussung" class="page">
+<div class="card"><h2>Begrüßung (احوال‌پرسی)</h2>
+<ul>
+<li>Hallo — سلام</li><li>Hi — سلام (غیررسمی)</li><li>Guten Morgen — صبح بخیر</li><li>Guten Tag — روز بخیر</li><li>Guten Abend — عصر بخیر</li><li>Gute Nacht — شب بخیر</li><li>Wie geht es dir? — حالت چطور است؟</li><li>Mir geht es gut — حالم خوب است</li><li>Danke — تشکر</li><li>Vielen Dank — تشکر زیاد</li><li>Bitte — لطفاً</li><li>Entschuldigung — ببخشید</li><li>Tschüss — خداحافظ</li><li>Auf Wiedersehen — خداحافظ</li>
+</ul></div>
 
-<!-- ================= CSS ================= -->
-<style>
-.category-section{padding:20px;border-top:2px solid #ddd;margin-top:30px}
-.words li{margin:5px 0}
-.exercise{margin:15px 0;padding:10px;border:1px solid #ccc;border-radius:8px}
-.exercise button{display:block;margin:5px 0;padding:8px;border-radius:6px;border:1px solid #aaa;cursor:pointer}
-</style>
-
-
-<!-- ================= SCRIPT ================= -->
-<script>
-let score = 0;
-let answered = 0;
-const total = document.querySelectorAll('#supermarkt .exercise').length;
-
-
-function updateScore(){
-document.getElementById('scoreBox').innerText = 'نمره: ' + score + ' / ' + total;
-}
-
-
-
-
-document.querySelectorAll('#supermarkt .exercise').forEach(ex => {
-const correct = ex.getAttribute('data-answer');
-const buttons = ex.querySelectorAll('button');
-
-
-buttons.forEach(btn=>{
-btn.onclick = function(){
-if(btn.classList.contains('done')) return;
-
-
-if(btn.innerText.includes(correct)){
-btn.style.background = '#9be7c4';
-score++;
-}else{
-btn.style.background = '#f7a8a8';
-}
-btn.classList.add('done');
-answered++;
-updateScore();
-}
-});
-});
-
-
-
-
-document.getElementById('showScore').onclick = function(){
-alert('نمره تو: ' + score + ' از ' + total);
-};
-</script>
-<!-- Alltag -->
-<details><summary>Alltag</summary><ul>
-<li>aufstehen — بیدار شدن</li><li>früh aufstehen — زود بیدار شدن</li>
-<li>lernen — یاد گرفتن</li><li>Deutsch lernen — آلمانی یاد گرفتن</li>
-<li>arbeiten — کار کردن</li><li>zur Arbeit gehen — به کار رفتن</li>
-<li>essen — غذا خوردن</li><li>Frühstück essen — صبحانه خوردن</li>
-<li>trinken — نوشیدن</li><li>schlafen — خوابیدن</li>
-<li>zu Hause bleiben — در خانه ماندن</li><li>fernsehen — تلویزیون دیدن</li>
-</ul></details>
-
-<!-- Haus -->
-<details><summary>Haus</summary><ul>
-<li>das Haus — خانه</li><li>die Wohnung — آپارتمان</li><li>das Zimmer — اتاق</li>
-<li>das Schlafzimmer — اتاق خواب</li><li>das Wohnzimmer — اتاق نشیمن</li>
-<li>die Küche — آشپزخانه</li><li>das Bad — حمام</li><li>die Toilette — دستشویی</li>
-<li>der Balkon — بالکن</li><li>die Tür — دروازه</li><li>das Fenster — پنجره</li>
-<li>im Haus — در خانه</li>
-</ul></details>
-
-<!-- Grammatik -->
-<details><summary>Grammatik</summary>
-<div class="text-card"><p><strong>sein (بودن)</strong></p>
-<p>ich bin — من هستم<br>du bist — تو هستی<br>er ist — او هست<br>sie ist — او هست<br>wir sind — ما هستیم<br>ihr seid — شما هستید</p></div>
-
-<div class="text-card"><p><strong>haben (داشتن)</strong></p>
-<p>ich habe — من دارم<br>du hast — تو داری<br>er hat — او دارد<br>sie hat — او دارد<br>wir haben — ما داریم<br>ihr habt — شما دارید</p></div>
-
-<div class="text-card"><p><strong>جمله ساده</strong></p>
-<p>Ich bin Ahmad.<br>من احمد هستم.<br><br>Ich habe eine Familie.<br>من یک خانواده دارم.</p></div>
-
-<div class="text-card"><p><strong>سؤال ساده</strong></p>
-<p>Bist du Ahmad?<br>آیا تو احمد هستی؟<br><br>Hast du eine Familie?<br>آیا تو یک خانواده داری؟</p></div>
-</details>
-
-<!-- Kurze Texte -->
-<details><summary>Kurze Texte</summary>
-<div class="text-card">
-<p><strong>Ich lerne Deutsch.</strong></p>
-<p>Ich lerne Deutsch jeden Tag.<br>Deutsch ist wichtig für mein Leben.</p>
-<p><strong>ترجمه:</strong><br>من هر روز آلمانی یاد می‌گیرم.<br>آلمانی برای زندگی من مهم است.</p>
+<div class="card">
+<div id="scoreBox">نمره: 0 / 5</div>
+<div class="exercise" data-answer="b"><p>1) Guten ___</p><button>a) Haus</button><button>b) Morgen</button><button>c) Brot</button></div>
+<div class="exercise" data-answer="a"><p>2) Hallo یعنی؟</p><button>a) سلام</button><button>b) خداحافظ</button><button>c) تشکر</button></div>
+<div class="exercise" data-answer="c"><p>3) Wie geht es dir?</p><button>a) نامت چیست</button><button>b) کجا می‌روی</button><button>c) حالت چطور است</button></div>
+<div class="exercise" data-answer="b"><p>4) Mir geht es ___</p><button>a) schlecht</button><button>b) gut</button><button>c) Haus</button></div>
+<div class="exercise" data-answer="a"><p>5) Tschüss یعنی؟</p><button>a) خداحافظ</button><button>b) سلام</button><button>c) لطفاً</button></div>
 </div>
+</section>
 
-<div class="text-card">
-<p><strong>Mein Alltag.</strong></p>
-<p>Ich stehe früh auf und trinke Tee.<br>Dann lerne ich Deutsch zu Hause.</p>
-<p><strong>ترجمه:</strong><br>من زود بیدار می‌شوم و چای می‌نوشم.<br>بعد در خانه آلمانی یاد می‌گیرم.</p>
-</div>
+<section id="familie" class="page"><div class="card"><h2>Familie</h2>
+<ul>
+<li>die Familie — خانواده</li><li>der Vater — پدر</li><li>die Mutter — مادر</li><li>der Bruder — برادر</li><li>die Schwester — خواهر</li><li>der Sohn — پسر</li><li>die Tochter — دختر</li><li>der Mann — شوهر</li><li>die Frau — زن</li><li>die Eltern — والدین</li><li>die Kinder — کودکان</li><li>der Großvater — پدربزرگ</li><li>die Großmutter — مادربزرگ</li><li>verheiratet — متأهل</li><li>ledig — مجرد</li>
+</ul></div></section>
 
-<div class="text-card">
-<p><strong>Meine Familie.</strong></p>
-<p>Meine Familie ist sehr wichtig für mich.<br>Wir helfen einander jeden Tag.</p>
-<p><strong>ترجمه:</strong><br>خانواده‌ام برای من بسیار مهم است.<br>ما هر روز به هم کمک می‌کنیم.</p>
-</div>
-</details>
+<section id="supermarkt" class="page"><div class="card"><h2>Supermarkt</h2><ul><li>der Supermarkt — سوپرمارکت</li><li>das Brot — نان</li><li>die Milch — شیر</li><li>das Wasser — آب</li><li>der Reis — برنج</li><li>das Fleisch — گوشت</li><li>das Gemüse — سبزیجات</li><li>das Obst — میوه</li><li>der Apfel — سیب</li><li>die Banane — موز</li><li>der Preis — قیمت</li><li>billig — ارزان</li><li>teuer — گران</li><li>kaufen — خریدن</li><li>bezahlen — پرداخت کردن</li></ul></div></section>
 
+<section id="alltag" class="page"><div class="card"><h2>Alltag</h2><ul><li>aufstehen — بیدار شدن</li><li>lernen — یاد گرفتن</li><li>arbeiten — کار کردن</li><li>essen — غذا خوردن</li><li>trinken — نوشیدن</li><li>schlafen — خوابیدن</li></ul></div></section>
 
-<!-- Übungen -->
-<details>
-<summary>Übungen – Sehr einfach</summary>
+<section id="haus" class="page"><div class="card"><h2>Haus</h2><ul><li>das Haus — خانه</li><li>die Wohnung — آپارتمان</li><li>das Zimmer — اتاق</li><li>die Küche — آشپزخانه</li><li>das Bad — حمام</li></ul></div></section>
 
+<section id="grammatik" class="page"><div class="card"><h2>Grammatik</h2><p>sein / haben + جملات ساده</p></div></section>
 
-<div class="exercise" data-answer="b">
-<p><strong>1)</strong> Ich ___ Ahmad.</p>
-<button>a) bist</button>
-<button>b) bin</button>
-<button>c) hat</button>
-</div>
+<section id="texte" class="page"><div class="card"><h2>Texte</h2><p>متن‌های کوتاه آموزشی</p></div></section>
 
-<div class="exercise" data-answer="a">
-<p><strong>2)</strong> Ich ___ eine Familie.</p>
-<button>a) habe</button>
-<button>b) hast</button>
-<button>c) ist</button>
-</div>
-
-<div class="exercise" data-answer="a">
-<p><strong>3)</strong> Guten ___</p>
-<button>a) Nacht</button>
-<button>b) Haus</button>
-<button>c) Brot</button>
-</div>
-
-<div class="exercise" data-answer="b">
-<p><strong>4)</strong> Hallo = ?</p>
-<button>a) خداحافظ</button>
-<button>b) سلام</button>
-<button>c) تشکر</button>
-</div>
-
-<div class="exercise" data-answer="a">
-<p><strong>5)</strong> Ich ___ Deutsch.</p>
-<button>a) lerne</button>
-<button>b) lernen</button>
-<button>c) lernt</button>
-</div>
-
-<div id="scoreBox" style="font-size:18px;font-weight:bold;margin-bottom:10px;">
-  نمره: 0 / 5
-</div>
-
-<button id="showScore">نمایش نمره</button>
-<div id="scoreResult"></div>
-
-
-</details>
-
+<section id="uebungen" class="page"><div class="card"><h2>Übungen</h2><p>تمرین‌های عمومی</p></div></section>
 
 </main>
 
-<footer>
-© 2026 Deutsch A1 Lernwebsite
-</footer>
+<footer>© 2026 Deutsch A1 Lernwebsite</footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+// MENU
+const menuBtn=document.getElementById('menuBtn');
+const menu=document.getElementById('menu');
+menuBtn.onclick=()=>menu.classList.toggle('active');
 
-  let correct = 0;
-  let total = 0;
+// PAGE NAVIGATION
+const links=document.querySelectorAll('.menu a');
+const pages=document.querySelectorAll('.page');
+links.forEach(l=>{
+ l.onclick=(e)=>{
+  e.preventDefault();
+  const id=l.getAttribute('data-page');
+  pages.forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  menu.classList.remove('active');
+ }
+});
 
-  const scoreBox = document.getElementById("scoreBox");
-  const exercises = document.querySelectorAll(".exercise");
+// EXERCISES SYSTEM
+let score=0;
+const exercises=document.querySelectorAll('.exercise');
+const scoreBox=document.getElementById('scoreBox');
+const total=exercises.length;
+function updateScore(){scoreBox.innerText=`نمره: ${score} / ${total}`;}
 
-  total = exercises.length;
-  updateScore();
-
-  exercises.forEach(ex => {
-    const correctAnswer = ex.getAttribute("data-answer");
-    const buttons = ex.querySelectorAll("button");
-
-    buttons.forEach(btn => {
-      btn.addEventListener("click", function () {
-
-        // جلوگیری از کلیک دوباره
-        if (ex.classList.contains("answered")) return;
-        ex.classList.add("answered");
-
-        const chosen = btn.innerText.trim().charAt(0); // a یا b یا c
-
-        if (chosen === correctAnswer) {
-          btn.style.background = "#4CAF50"; // سبز
-          btn.style.color = "white";
-          correct++;
-        } else {
-          btn.style.background = "#f44336"; // سرخ
-          btn.style.color = "white";
-
-          // نشان دادن جواب درست
-          buttons.forEach(b => {
-            if (b.innerText.trim().charAt(0) === correctAnswer) {
-              b.style.background = "#4CAF50";
-              b.style.color = "white";
-            }
-          });
-        }
-
-        updateScore();
-      });
-    });
-  });
-
-  function updateScore() {
-    scoreBox.innerText = "نمره: " + correct + " / " + total;
+exercises.forEach(ex=>{
+ const correct=ex.getAttribute('data-answer');
+ const buttons=ex.querySelectorAll('button');
+ buttons.forEach(btn=>{
+  btn.onclick=()=>{
+   if(ex.classList.contains('done'))return;
+   ex.classList.add('done');
+   const choice=btn.innerText.trim().charAt(0);
+   if(choice===correct){btn.style.background='#16a34a';score++;}
+   else{btn.style.background='#dc2626';buttons.forEach(b=>{if(b.innerText.trim().charAt(0)===correct)b.style.background='#16a34a';});}
+   updateScore();
   }
-
+ })
 });
+updateScore();
 </script>
-
-
-</details>
-
-<!-- Navigation Buttons -->
-<div style="display:flex; justify-content:space-between; margin-top:30px; gap:10px;">
-  <button onclick="alert('فعلاً فعال نیست')"
-    style="flex:1; padding:14px; border:none; border-radius:10px; background:#cfe3d9; color:#2f7d5a; font-size:16px; cursor:pointer;">
-    ⬅️ درس قبلی
-  </button>
-
-  <button onclick="alert('فعلاً فعال نیست')"
-    style="flex:1; padding:14px; border:none; border-radius:10px; background:#2f7d5a; color:white; font-size:16px; cursor:pointer;">
-    درس بعدی ➡️
-  </button>
-</div>
-
-</main>
-
-
-
-
 
 </body>
 </html>
