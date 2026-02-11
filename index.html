@@ -2,171 +2,40 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>Deutsch A1 – Einfach Lernen</title>
+<title>Deutsch Lernen</title>
+<link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-}
-header{
-  background:#020617;
-  color:white;
-  padding:16px;
-  text-align:center;
-  position:fixed;
-  top:0;left:0;right:0;
-  z-index:1000;
-}
-.menu-btn{
-  position:absolute;
-  left:15px;top:15px;
-  font-size:28px;
-  cursor:pointer;
-}
-.menu{
-  position:fixed;
-  top:0;left:-100%;
-  width:260px;height:100%;
-  background:#020617;
-  padding:20px;
-  transition:0.3s;
-  z-index:2000;
-}
-.menu.active{left:0}
-.menu a{
-  display:block;
-  color:#e5e7eb;
-  text-decoration:none;
-  padding:12px;
-  border-radius:8px;
-  margin-bottom:6px;
-}
-.menu a:hover{background:#1e293b}
-main{padding-top:90px;max-width:1000px;margin:auto}
-.page{display:none;padding:20px}
-.page.active{display:block}
-.card{
-  background:#020617;
-  border-radius:14px;
-  padding:16px;
-  margin-bottom:16px;
-  border:1px solid #1e293b;
-}
-.exercise{border:1px solid #334155;border-radius:10px;padding:12px;margin:10px 0}
-.exercise button{display:block;width:100%;margin:6px 0;padding:10px;border-radius:8px;border:none;background:#1e293b;color:white;cursor:pointer}
-.exercise button:hover{background:#334155}
-#scoreBox{font-size:18px;font-weight:bold;margin:15px 0}
-footer{text-align:center;padding:20px;color:#94a3b8}
-</style>
 </head>
+
 <body>
+
 <header>
-<span class="menu-btn" id="menuBtn">☰</span>
-<h1>Deutsch A1 – Einfach Lernen</h1>
+  <div class="logo">Deutsch Lernen</div>
+
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <nav id="menu">
+    <a href="index.html">Start</a>
+    <a href="#">Über uns</a>
+    <a href="#">Kontakt</a>
+  </nav>
 </header>
 
-<div class="menu" id="menu">
-<a href="#" data-page="home">🏠 Start</a>
-<a href="#" data-page="begrussung">👋 Begrüßung</a>
-<a href="#" data-page="familie">👨‍👩‍👧 Familie</a>
-<a href="#" data-page="supermarkt">🛒 Supermarkt</a>
-<a href="#" data-page="alltag">📅 Alltag</a>
-<a href="#" data-page="haus">🏠 Haus</a>
-<a href="#" data-page="grammatik">📘 Grammatik</a>
-<a href="#" data-page="texte">📖 Texte</a>
-<a href="#" data-page="uebungen">📝 Übungen</a>
-</div>
-
 <main>
+  <h1>Willkommen 👋</h1>
+  <p>Wähle eine Kategorie:</p>
 
-<section id="home" class="page active">
-<div class="card">Willkommen! Hier lernst du Deutsch A1 Schritt für Schritt.</div>
-</section>
-
-<section id="begrussung" class="page">
-<div class="card"><h2>Begrüßung (احوال‌پرسی)</h2>
-<ul>
-<li>Hallo — سلام</li><li>Hi — سلام (غیررسمی)</li><li>Guten Morgen — صبح بخیر</li><li>Guten Tag — روز بخیر</li><li>Guten Abend — عصر بخیر</li><li>Gute Nacht — شب بخیر</li><li>Wie geht es dir? — حالت چطور است؟</li><li>Mir geht es gut — حالم خوب است</li><li>Danke — تشکر</li><li>Vielen Dank — تشکر زیاد</li><li>Bitte — لطفاً</li><li>Entschuldigung — ببخشید</li><li>Tschüss — خداحافظ</li><li>Auf Wiedersehen — خداحافظ</li>
-</ul></div>
-
-<div class="card">
-<div id="scoreBox">نمره: 0 / 5</div>
-<div class="exercise" data-answer="b"><p>1) Guten ___</p><button>a) Haus</button><button>b) Morgen</button><button>c) Brot</button></div>
-<div class="exercise" data-answer="a"><p>2) Hallo یعنی؟</p><button>a) سلام</button><button>b) خداحافظ</button><button>c) تشکر</button></div>
-<div class="exercise" data-answer="c"><p>3) Wie geht es dir?</p><button>a) نامت چیست</button><button>b) کجا می‌روی</button><button>c) حالت چطور است</button></div>
-<div class="exercise" data-answer="b"><p>4) Mir geht es ___</p><button>a) schlecht</button><button>b) gut</button><button>c) Haus</button></div>
-<div class="exercise" data-answer="a"><p>5) Tschüss یعنی؟</p><button>a) خداحافظ</button><button>b) سلام</button><button>c) لطفاً</button></div>
-</div>
-</section>
-
-<section id="familie" class="page"><div class="card"><h2>Familie</h2>
-<ul>
-<li>die Familie — خانواده</li><li>der Vater — پدر</li><li>die Mutter — مادر</li><li>der Bruder — برادر</li><li>die Schwester — خواهر</li><li>der Sohn — پسر</li><li>die Tochter — دختر</li><li>der Mann — شوهر</li><li>die Frau — زن</li><li>die Eltern — والدین</li><li>die Kinder — کودکان</li><li>der Großvater — پدربزرگ</li><li>die Großmutter — مادربزرگ</li><li>verheiratet — متأهل</li><li>ledig — مجرد</li>
-</ul></div></section>
-
-<section id="supermarkt" class="page"><div class="card"><h2>Supermarkt</h2><ul><li>der Supermarkt — سوپرمارکت</li><li>das Brot — نان</li><li>die Milch — شیر</li><li>das Wasser — آب</li><li>der Reis — برنج</li><li>das Fleisch — گوشت</li><li>das Gemüse — سبزیجات</li><li>das Obst — میوه</li><li>der Apfel — سیب</li><li>die Banane — موز</li><li>der Preis — قیمت</li><li>billig — ارزان</li><li>teuer — گران</li><li>kaufen — خریدن</li><li>bezahlen — پرداخت کردن</li></ul></div></section>
-
-<section id="alltag" class="page"><div class="card"><h2>Alltag</h2><ul><li>aufstehen — بیدار شدن</li><li>lernen — یاد گرفتن</li><li>arbeiten — کار کردن</li><li>essen — غذا خوردن</li><li>trinken — نوشیدن</li><li>schlafen — خوابیدن</li></ul></div></section>
-
-<section id="haus" class="page"><div class="card"><h2>Haus</h2><ul><li>das Haus — خانه</li><li>die Wohnung — آپارتمان</li><li>das Zimmer — اتاق</li><li>die Küche — آشپزخانه</li><li>das Bad — حمام</li></ul></div></section>
-
-<section id="grammatik" class="page"><div class="card"><h2>Grammatik</h2><p>sein / haben + جملات ساده</p></div></section>
-
-<section id="texte" class="page"><div class="card"><h2>Texte</h2><p>متن‌های کوتاه آموزشی</p></div></section>
-
-<section id="uebungen" class="page"><div class="card"><h2>Übungen</h2><p>تمرین‌های عمومی</p></div></section>
-
+  <div class="categories">
+    <a href="begruessung.html" class="card">احوال پرسی</a>
+    <a href="haus.html" class="card">خانه</a>
+    <a href="familie.html" class="card">فامیل</a>
+    <a href="alltag.html" class="card">Alltag</a>
+    <a href="supermarkt.html" class="card">سوپرمارکت</a>
+    <a href="grammatik.html" class="card">گرامر</a>
+    <a href="texte.html" class="card">تکست های کوتاه</a>
+  </div>
 </main>
 
-<footer>© 2026 Deutsch A1 Lernwebsite</footer>
-
-<script>
-// MENU
-const menuBtn=document.getElementById('menuBtn');
-const menu=document.getElementById('menu');
-menuBtn.onclick=()=>menu.classList.toggle('active');
-
-// PAGE NAVIGATION
-const links=document.querySelectorAll('.menu a');
-const pages=document.querySelectorAll('.page');
-links.forEach(l=>{
- l.onclick=(e)=>{
-  e.preventDefault();
-  const id=l.getAttribute('data-page');
-  pages.forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  menu.classList.remove('active');
- }
-});
-
-// EXERCISES SYSTEM
-let score=0;
-const exercises=document.querySelectorAll('.exercise');
-const scoreBox=document.getElementById('scoreBox');
-const total=exercises.length;
-function updateScore(){scoreBox.innerText=`نمره: ${score} / ${total}`;}
-
-exercises.forEach(ex=>{
- const correct=ex.getAttribute('data-answer');
- const buttons=ex.querySelectorAll('button');
- buttons.forEach(btn=>{
-  btn.onclick=()=>{
-   if(ex.classList.contains('done'))return;
-   ex.classList.add('done');
-   const choice=btn.innerText.trim().charAt(0);
-   if(choice===correct){btn.style.background='#16a34a';score++;}
-   else{btn.style.background='#dc2626';buttons.forEach(b=>{if(b.innerText.trim().charAt(0)===correct)b.style.background='#16a34a';});}
-   updateScore();
-  }
- })
-});
-updateScore();
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
