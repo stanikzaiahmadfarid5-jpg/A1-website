@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Alltag</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Alltag</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<header>
+  <a href="index.html" class="back">← Zurück</a>
+</header>
+
+<main>
 <h1>Alltag</h1>
-<p>Wörter für den Alltag</p>
 
-<ul class="word-list">
-  <li><b>der Tag</b> – روز</li>
-  <li><b>die Nacht</b> – شب</li>
-  <li><b>arbeiten</b> – کار کردن</li>
-  <li><b>lernen</b> – یاد گرفتن</li>
-  <li><b>essen</b> – غذا خوردن</li>
-  <li><b>trinken</b> – نوشیدن</li>
-  <li><b>schlafen</b> – خوابیدن</li>
-</ul>
+<p>Ich stehe um 7 Uhr auf.</p>
+<p>Ich gehe zur Arbeit.</p>
+<p>Ich lerne Deutsch.</p>
 
+<div class="uebung">
+<p>Was ist richtig?</p>
+<label><input type="radio" name="q1"> Ich gehen Arbeit</label><br>
+<label><input type="radio" name="q1" data-correct="true"> Ich gehe zur Arbeit</label><br>
+<button onclick="checkAnswers()">Antwort prüfen</button>
+<p class="result"></p>
+</div>
+
+</main>
+<script src="script.js"></script>
 </body>
 </html>
