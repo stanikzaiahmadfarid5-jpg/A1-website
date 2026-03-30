@@ -1,89 +1,91 @@
+*{
+  box-sizing:border-box;
+}
+
 body{
-margin:0;
-font-family:Arial;
-background:#f4f7fb;
-color:#222;
+  margin:0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg,#eef2ff,#f8fafc);
+  color:#222;
 }
 
+/* Header */
 header{
-background:#0d47a1;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+  background:#2f7d5a;
+  color:white;
+  padding:18px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
 }
 
-.logo{font-weight:bold;font-size:20px;}
-
-.menu-btn{
-font-size:26px;
-cursor:pointer;
-}
-
-#menu{
-display:none;
-flex-direction:column;
-background:#1565c0;
-position:absolute;
-top:60px;
-right:10px;
-border-radius:10px;
-overflow:hidden;
-}
-
-#menu a{
-color:white;
-padding:10px 20px;
-text-decoration:none;
-}
-
-#menu a:hover{
-background:#0d47a1;
-}
-
+/* Main */
 main{
-padding:20px;
-text-align:center;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
 
-.categories{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
-margin-top:20px;
+/* Welcome box */
+.section{
+  background:white;
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-text-decoration:none;
-color:#0d47a1;
-font-weight:bold;
-box-shadow:0 4px 8px rgba(0,0,0,0.1);
-transition:0.3s;
+/* Category cards */
+details{
+  background:white;
+  border-radius:14px;
+  margin-bottom:15px;
+  padding:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
-.card:hover{
-transform:scale(1.05);
-background:#e3f2fd;
+summary{
+  font-size:20px;
+  font-weight:bold;
+  color:#2f7d5a;
+  cursor:pointer;
 }
 
-.back{
-color:white;
-text-decoration:none;
-font-weight:bold;
+/* Text blocks */
+.text-card{
+  background:#f6fbf8;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
 }
 
-.uebung{
-margin-top:30px;
-background:white;
-padding:15px;
-border-radius:10px;
+/* Exercises */
+.exercise{
+  background:#f0faf5;
+  padding:15px;
+  border-radius:10px;
+  margin-top:10px;
 }
 
-.result{
-font-weight:bold;
-margin-top:10px;
+.exercise button{
+  display:block;
+  width:100%;
+  margin-top:8px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:#e0e0e0;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.exercise button:hover{
+  background:#cfd8dc;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#666;
 }
